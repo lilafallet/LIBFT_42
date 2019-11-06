@@ -1,9 +1,9 @@
-#include "ft.h"
+#include <stdlib.h>
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	unsigned int	i;
-	size_t			count;
+	size_t	i;
+	size_t	count;
 
 	count = 0;
 	i = 0;

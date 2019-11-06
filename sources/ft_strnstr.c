@@ -1,31 +1,29 @@
-#include "ft.h"
+# include "ft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+static int	ft_are_strings_matched(char *s1, char *s2)
 {
-	size_t	i;
-	size_t	j;
-	size_t	tmp;
-	char	*s;
-
-	i = 0;
-	j = 0;
-	s = (char *)big;
-	if (little == NULL)
-		return (s);
-	while (s[i] != '\0' && j <= len)
+	while (*s2 != '\0')
 	{
-		if (s[i] == little[j])
-		{
-			tmp = i;
-			i++;
-			j++;
-		}
-		else if (s[i - 1] == little[j - 1] && s[i] != little[j])
-		{
-			i++;
-			tmp = 0;
-			j = 0;
-		}
+		if (*s1 != *s2)
+			return (FALSE);
+		s1++;
+		s2++;
 	}
-	return (j == len ? s + tmp : NULL);
+	return (TRUE);
+}
+
+char		*ft_strnstr(const char *big, const char *little, size_t len)
+{
+	long	count;
+	long	len_run;
+
+	len_run = (long)(len - ft_strlen(little));
+	count = 0;
+	while (big[count] != '\0' && count <= len_run)
+	{
+		if (ft_are_strings_matched((char *)big + count, (char *)little) == TRUE)
+			return ((char *)big + count);
+		count++;
+	}
+	return (NULL);
 }

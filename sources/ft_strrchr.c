@@ -10,31 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft.h"
+#include  "ft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	count;
-	int		letter;
-	int		last;
-	char	*str;
-	int		tmp;
+	ssize_t	i;
 
-	count = 0;
-	last = -1;
-	str = (char *)s;
-	while (str[count] != '\0')
+	i = (ssize_t)ft_strlen(s);
+	if (c == '\0')
+		return ((char *)s + i);
+	i--;
+	while (i >= 0)
 	{
-		if (str[count] == c)
-		{
-			if (last == -1)
-				letter = count;
-			tmp = count;
-			last++;
-			count++;
-		}
-		else
-			count++;
+		if (s[i] == c)
+			return ((char *)s + i);
+		i--;
 	}
-	return (last > -1 ? str + letter + (tmp - letter) : NULL);
+	return (NULL);
 }

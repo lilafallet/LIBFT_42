@@ -10,25 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft.h"
-#include <stdio.h> //DEBUG A ENLEVER
+#include <stdlib.h>
 
 char	*ft_strchr(const char *s, int c)
 {
 	size_t	count;
-	char	*chr;
 
 	count = 0;
-	chr = (char *)s;
-	while (chr[count] != '\0')
+	while (s[count] != '\0')
 	{
-		if (chr[count] == c)
-		{
-			printf("%zu\n", count); //DEBUG A ENLEVER
-			return (chr + count);
-		}
-		else
-			count++;
+		if (s[count] == c)
+			return ((char *)s + count);
+		count++;
 	}
 	return (NULL);
 }
