@@ -7,6 +7,7 @@ int	main(int ac, char **av)
 	
 	(void)ac;
 	new_str = ft_strnstr(av[1], av[2], atoi(av[3]));
-	puts(new_str);
+	if (new_str != NULL)
+		puts(new_str);
 	return (EXIT_SUCCESS);
 }

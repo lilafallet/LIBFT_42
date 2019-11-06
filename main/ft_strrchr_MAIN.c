@@ -12,11 +12,13 @@
 
 #include "ft.h"
 #include <stdio.h>
+#include <string.h>
 
 int	main(int ac, char **av)
 {
 	(void)ac;
 	char	*new_str;
+
 	new_str = ft_strrchr(av[1], av[2][0]);
 	puts(new_str);
 	return (EXIT_SUCCESS);
