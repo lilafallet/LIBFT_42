@@ -28,5 +28,6 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_atoi(const char *str);
+void	*ft_memset(void *s, int c, size_t n);
 
 #endif
