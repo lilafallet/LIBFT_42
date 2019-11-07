@@ -49,6 +49,8 @@ char	*ft_strdup(const char *s);
 **** PART 2
 */
 
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+
 /*
 **** Personal Part
 */
