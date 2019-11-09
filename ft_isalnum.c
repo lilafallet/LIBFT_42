@@ -24,7 +24,7 @@ int		main(int ac, char **av)
 {
 	if (ac == 2)
 	{
-		printf("%c %d, %d\n", ft_isalnum(atoi(av[1])), isalnum(atoi(av[1])));
+		printf("%d, %d\n", ft_isalnum(atoi(av[1])), isalnum(atoi(av[1])));
 	}
 	return (0);
 }*/
