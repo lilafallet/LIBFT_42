@@ -1,89 +1,72 @@
 #include "ft.h"
 
-size_t	ft_strchr_count(const char *s, int c, size_t count)
-{
-	while (s[count] != '\0')
-	{
-		if (s[count] == c)
-			return (count);
-		count++;
-	}
-	return (count);
-}
-
-char	**ft_split_process(char **str, char const *s1,
-		size_t number_of_str, int *tab)
-{
-	size_t	len_s1;
-	size_t	tmp;
-
-	len_s1 = ft_strlen(s1);
-	tmp = 0;
-
-	while (tmp < number_of_str)
-	{
-		if (tmp == 0)
-			str[tmp] = ft_substr(s1, tab[tmp], tab[tmp + 1] - 1);
-		if (tmp == number_of_str - 1)
-			str[tmp] = ft_substr(s1, tab[tmp],
-			(len_s1 - tab[tmp - 1] - 1));
-		else
-			str[tmp] = ft_substr(s1, tab[tmp],
-			(tab[tmp + 1] - tab[tmp] - 1));
-		tmp++; 
-	}
-	return (str);
-}
-
-size_t	ft_ischar(char const *s1, char c)
+static void		ft_free_tab_str(char ***strs, size_t max_size)
 {
 	size_t	i;
-	size_t	count;
 
 	i = 0;
-	count = 0;
-	while (s1[i] != '\0')
+	while (i < max_size)
 	{
-		if (s1[i] == c)
-			count++;
+		free((*strs)[i]);
 		i++;
 	}
-	return (count);
+	free(*strs);
 }
 
-void	ft_init_tab(int *tab, size_t number_of_str)
+static void		ft_process_split(char ***strs, char *s, char c)
 {
-	size_t	tmp;
+	size_t	len;
+	size_t	i;
 
-	tmp = 0;
-	while (tmp < number_of_str)
+	i = 0;
+	while (*s != '\0')
 	{
-		tab[tmp] = 0;
-		tmp++;
+		len = 0;
+		while (*s == c)
+			s++;
+		while (s[len] != c && s[len] != '\0')
+			len++;
+		if (len == 0)
+			break;
+		(*strs)[i] = ft_substr(s, 0, len);
+		if ((*strs)[i] == NULL)
+		{
+			ft_free_tab_str(strs, i);
+			break ;
+		}
+		i++;
+		s += len;
 	}
 }
-char	**ft_split(char const *s1, char c)
-{
-	char	**str;
-	int		tab[100];
-	size_t	number_of_str;
-	size_t	tmp;
-	size_t	count;
 
-	number_of_str = ft_ischar(s1, c);
-	ft_init_tab(tab, number_of_str);
-	tmp = 0;
-	count = 0;
-	while(s1[count] != '\0' && tmp < number_of_str)
+static size_t	ft_get_word_count(char *s, char c)
+{
+	size_t	word_count;
+
+	word_count = (*s != c && *s != '\0');
+	while (*s != '\0')
 	{
-		count = ft_strchr_count(s1, c, count);
-		tab[tmp] = count + 1;
-		count ++;
-		tmp++;
+		if (*s == c)
+		{
+			while (*s == c)
+				s++;
+			if (*s == '\0')
+				break;
+			word_count++;
+		}
+		s++;
 	}
-	str = (char **)malloc(sizeof(char *) * (number_of_str));
-	if (str == NULL)
-		return (NULL);
-	str = ft_split_process(str, s1, number_of_str, tab);
-	return (str);	
+	return (word_count);
+} 
+
+char			**ft_split(char const *s1, char c)
+{
+	char	**strs;
+	size_t	word_count;
+
+	word_count = ft_get_word_count((char *)s1, c);
+	strs = (char **)malloc(sizeof(char *) * (word_count + 1));
+	if (strs != NULL)
+		ft_process_split(&strs, (char *)s1, c);
+	return (strs);
 }
