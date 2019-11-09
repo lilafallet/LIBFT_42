@@ -64,9 +64,13 @@ char			**ft_split(char const *s1, char c)
 	char	**strs;
 	size_t	word_count;
 
-	word_count = ft_get_word_count((char *)s1, c);
-	strs = (char **)malloc(sizeof(char *) * (word_count + 1));
-	if (strs != NULL)
-		ft_process_split(&strs, (char *)s1, c);
+	strs = NULL;
+	if (s1 != NULL)
+	{
+		word_count = ft_get_word_count((char *)s1, c);
+		strs = (char **)malloc(sizeof(char *) * (word_count + 1));
+		if (strs != NULL)
+			ft_process_split(&strs, (char *)s1, c);
+	}
 	return (strs);
 }
