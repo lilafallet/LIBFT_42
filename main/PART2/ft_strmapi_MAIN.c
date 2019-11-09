@@ -1,6 +1,18 @@
 #include "ft.h"
 
-int	main(int ac, char **av)
+char	lol(unsigned int i, char c)
 {
-	return (EXIT_SUCCESS);
+	return (c + i);
+}
+
+#include <stdio.h>
+
+int		main(void)
+{
+	char	*out;
+
+	out = ft_strmapi("AAAAAAAAAAAAAAAAAAAAAAAAAA", lol);
+	printf("%s\n", out);
+	free(out);
+	return (0);
 }

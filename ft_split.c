@@ -70,7 +70,10 @@ char			**ft_split(char const *s1, char c)
 		word_count = ft_get_word_count((char *)s1, c);
 		strs = (char **)malloc(sizeof(char *) * (word_count + 1));
 		if (strs != NULL)
+		{
+			strs[word_count] = NULL;
 			ft_process_split(&strs, (char *)s1, c);
+		}
 	}
 	return (strs);
 }

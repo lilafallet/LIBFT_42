@@ -14,5 +14,17 @@
 
 int	ft_isalnum(int c)
 {
-	return (ft_isalpha(c) == TRUE || ft_isdigit(c) == TRUE);
+	return (ft_isalpha(c) || ft_isdigit(c));
 }
+/*
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+int		main(int ac, char **av)
+{
+	if (ac == 2)
+	{
+		printf("%c %d, %d\n", ft_isalnum(atoi(av[1])), isalnum(atoi(av[1])));
+	}
+	return (0);
+}*/
