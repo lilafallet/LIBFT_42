@@ -3,6 +3,6 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	write(fd, s, ft_strlen(s));
+	ft_putstr_fd(s, fd);
 	ft_putchar_fd('\n', fd);
 }

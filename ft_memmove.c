@@ -7,15 +7,18 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 
 	dst_cp = (unsigned char *)dst;
 	src_cp = (unsigned char *)src;
-	if (dst < src)
+	if (dst != NULL || src != NULL)
 	{
-		while (n-- > 0)
-			*dst_cp++ = *src_cp++;
-	}
-	else
-	{
-		while (n-- > 0)
+		if (dst < src)
+		{
+			while (n-- > 0)
+				*dst_cp++ = *src_cp++;
+		}
+		else
+		{
+			while (n-- > 0)
 			dst_cp[n] = src_cp[n];
+		}
 	}
 	return (dst);
 }

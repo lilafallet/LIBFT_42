@@ -17,11 +17,7 @@ char	*ft_strchr(const char *s, int c)
 	size_t	count;
 
 	count = 0;
-	while (s[count] != '\0')
-	{
-		if (s[count] == c)
-			return ((char *)s + count);
+	while (s[count] != '\0' && s[count] != c)
 		count++;
-	}
-	return (NULL);
+	return (s[count] == c ? (char *)s + count : NULL);
 }

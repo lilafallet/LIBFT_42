@@ -1,4 +1,4 @@
-#include "ft_string.h"
+#include "ft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -13,11 +13,29 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (str == NULL)
 		return (NULL);
 	i = 0;
-	while (str[i])
+	while (s[i] != '\0')
 	{
-		str[i] = f(i, str[i]);
+		str[i] = f(i, s[i]);
 		i++;
 	}
 	str[i] = '\0';
 	return (str);
 }
+
+/*
+char	lol(unsigned int i, char c)
+{
+	return (c + i);
+}
+
+#include <stdio.h>
+
+int		main(void)
+{
+	char	*out;
+
+	out = ft_strmapi("AAAAAAAAAAAAAAAAAAAAAAAAAA", lol);
+	printf("%s\n", out);
+	free(out);
+	return (0);
+}*/
