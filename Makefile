@@ -55,17 +55,24 @@ SRCS += ft_strtrim.c
 SRCS += ft_substr.c
 SRCS += ft_tolower.c
 SRCS += ft_toupper.c
-SRCS += ft_lstadd_back.c
-SRCS += ft_lstadd_front.c
-SRCS += ft_lstclear.c
-SRCS += ft_lstdelone.c
-SRCS += ft_lstiter.c
-SRCS += ft_lstlast.c
-SRCS += ft_lstmap.c
-SRCS += ft_lstnew.c
-SRCS += ft_lstsize.c
+
+BONUS += ft_lstadd_back.c
+BONUS += ft_lstadd_front.c
+BONUS += ft_lstclear.c
+BONUS += ft_lstdelone.c
+BONUS += ft_lstiter.c
+BONUS += ft_lstlast.c
+BONUS += ft_lstmap.c
+BONUS += ft_lstnew.c
+BONUS += ft_lstsize.c
+
+PERSO += ft_putchar.c
+PERSO += ft_putstr.c
 
 OBJS = $(patsubst %.c, %.o, $(SRCS))
+OBJS_BONUS = $(patsubst %.c, %.o, $(BONUS))
+OBJS_PERSO = $(patsubst %.c, %.o, $(PERSO))
+
 
 all : $(NAME)
 
@@ -77,12 +84,25 @@ $(OBJS) : %.o: %.c $(HEADER)
 
 clean :
 	$(RM) $(OBJS)
+	$(RM) $(OBJS_BONUS)
+	$(RM) $(OBJS_PERSO)
 
 fclean : clean
 	$(RM) $(NAME)
 
 re : fclean all
 
-bonus :
+bonus : $(OBJS) $(OBJS_BONUS)
+	ar rcs $(NAME) $^
+	
+$(OBJS_BONUS) : %.o: %.c $(HEADER)
+	$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
 
-.PHONY: all clean fclean re bonus
+perso : $(OBJS) $(OBJS_BONUS) $(OBJS_PERSO)
+	ar rcs $(NAME) $^
+
+$(OBJS_PERSO) : %.o: %.c $(HEADER)
+	$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
+
+.PHONY: all clean fclean re bonus perso
+#.SILENT:

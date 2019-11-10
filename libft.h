@@ -87,6 +87,7 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 **** PERSONAL PART
 */
 
-
+void			ft_putchar(char c);
+void			ft_putstr(char *s);
 
 #endif
