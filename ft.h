@@ -73,6 +73,8 @@ typedef struct	s_list
 
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **alst, t_list *new);
+int		ft_lstsize(t_list *lst);
+
 
 /*
 **** PERSONAL PART
