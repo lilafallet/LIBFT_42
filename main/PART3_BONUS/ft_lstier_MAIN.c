@@ -1,4 +1,4 @@
-#include "ft.h"
+#include "libft.h"
 #include <stdio.h>
 
 void	ft_free_list_string(void *data)

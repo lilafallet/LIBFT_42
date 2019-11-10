@@ -1,6 +1,6 @@
 #include <unistd.h>
 #include <limits.h>
-#include "ft.h"
+#include "libft.h"
 
 void	ft_putnbr_fd(int nb, int fd)
 {

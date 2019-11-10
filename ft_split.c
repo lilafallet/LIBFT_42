@@ -1,4 +1,4 @@
-#include "ft.h"
+#include "libft.h"
 
 static void		ft_free_tab_str(char ***strs, size_t max_size)
 {

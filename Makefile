@@ -12,14 +12,14 @@
 
 NAME = libft.a
 
-CC = gcc
+CC = clang
 
 CFLAGS += -Wall
 CFLAGS += -Wextra
 CFLAGS += -Werror
 
 INC = ./
-HEADER = ft.h
+HEADER = libft.h
 
 SRCS += ft_atoi.c
 SRCS += ft_bzero.c
@@ -55,8 +55,16 @@ SRCS += ft_strtrim.c
 SRCS += ft_substr.c
 SRCS += ft_tolower.c
 SRCS += ft_toupper.c
+SRCS += ft_lstadd_back.c
+SRCS += ft_lstadd_front.c
+SRCS += ft_lstclear.c
+SRCS += ft_lstdelone.c
+SRCS += ft_lstiter.c
+SRCS += ft_lstlast.c
+SRCS += ft_lstmap.c
+SRCS += ft_lstnew.c
+SRCS += ft_lstsize.c
 
-CFLAGS += -Werror -fPIC
 OBJS = $(patsubst %.c, %.o, $(SRCS))
 
 all : $(NAME)
@@ -74,9 +82,7 @@ fclean : clean
 	$(RM) $(NAME)
 
 re : fclean all
-bonus :
 
-so: $(OBJS)
-	clang -fPIC -shared -o libft.so $(OBJS)
+bonus :
 
 .PHONY: all clean fclean re bonus

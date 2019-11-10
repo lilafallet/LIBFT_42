@@ -1,4 +1,4 @@
-# include "ft.h"
+# include "libft.h"
 
 static int	ft_are_strings_matched(char *s1, char *s2)
 {

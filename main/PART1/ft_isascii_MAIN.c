@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "ft.h"
+#include "libft.h"
 
 int	main(int ac, char **av)
 {

@@ -1,14 +1,14 @@
-#include "ft.h"
+#include "libft.h"
 
 int	ft_lstsize(t_list *lst)
 {
-	int	i;
+	int	count;
 
-	i = 0;
+	count = 0;
 	while (lst != NULL)
 	{
 		lst = lst->next;
-		i++;
+		count++;
 	}
-	return (i);
+	return (count);
 }

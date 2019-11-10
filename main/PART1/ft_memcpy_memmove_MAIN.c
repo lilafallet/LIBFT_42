@@ -1,7 +1,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include "ft.h"
+#include "libft.h"
 
 void	*ft_fredmemcpy(void *, void *, size_t);
 

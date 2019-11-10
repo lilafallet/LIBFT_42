@@ -1,4 +1,4 @@
-#include "ft.h"
+#include "libft.h"
 #include <stdio.h>
 
 static void	free_tab_str(char ***str)

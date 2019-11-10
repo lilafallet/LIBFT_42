@@ -1,13 +1,13 @@
-#include "ft.h"
+#include "libft.h"
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (lst != NULL && f != NULL)
-		return ;
-	while (lst->next != NULL)
+	if (f != NULL)
 	{
-		(*f)(lst);
-		lst = lst->next;
+		while (lst != NULL)
+		{
+			f(lst->content);
+			lst = lst->next;
+		}
 	}
-	return ;
 }
