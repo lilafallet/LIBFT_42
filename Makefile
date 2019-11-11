@@ -1,25 +1,14 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: lfallet <marvin@42.fr>                     +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/11/04 11:57:44 by lfallet           #+#    #+#              #
-#    Updated: 2019/11/04 11:59:41 by lfallet          ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME = libft.a
-
-CC = clang
 
 CFLAGS += -Wall
 CFLAGS += -Wextra
 CFLAGS += -Werror
 
-INC = ./
-HEADER = libft.h
+CC = clang
+
+INCLUDES = ./
+
+HEADER = $(INCLUDES)libft.h
 
 SRCS += ft_atoi.c
 SRCS += ft_bzero.c
@@ -66,33 +55,30 @@ BONUS += ft_lstmap.c
 BONUS += ft_lstnew.c
 BONUS += ft_lstsize.c
 
-
-OBJS = $(patsubst %.c, %.o, $(SRCS))
-OBJS_BONUS = $(patsubst %.c, %.o, $(BONUS))
-
+OBJS = $(SRCS:.c=.o)
+OBJS_BONUS = $(BONUS:.c=.o)
 
 all : $(NAME)
 
-$(NAME) : $(OBJS)
+$(NAME): $(OBJS)
 	ar rcs $@ $^
 
+bonus : $(OBJS_BONUS) $(OBJS)
+	ar rcs $(NAME) $^
+
 $(OBJS) : %.o: %.c $(HEADER)
-	$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
+	$(CC) $(CFLAGS) -I$(INCLUDES) -c $< -o $@
+
+$(OBJS_BONUS) : %.o: %.c $(HEADER)
+	$(CC) $(CFLAGS) -I$(INCLUDES) -c $< -o $@
 
 clean :
-	$(RM) $(OBJS)
-	$(RM) $(OBJS_BONUS)
+	$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean : clean
 	$(RM) $(NAME)
 
 re : fclean all
 
-bonus : $(OBJS) $(OBJS_BONUS)
-	ar rcs $(NAME) $^
-	
-$(OBJS_BONUS) : %.o: %.c $(HEADER)
-	$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
-
-.PHONY: all clean fclean re bonus
+.PHONY: all bonus clean fclean re
 #.SILENT:
