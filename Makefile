@@ -66,12 +66,9 @@ BONUS += ft_lstmap.c
 BONUS += ft_lstnew.c
 BONUS += ft_lstsize.c
 
-PERSO += ft_putchar.c
-PERSO += ft_putstr.c
 
 OBJS = $(patsubst %.c, %.o, $(SRCS))
 OBJS_BONUS = $(patsubst %.c, %.o, $(BONUS))
-OBJS_PERSO = $(patsubst %.c, %.o, $(PERSO))
 
 
 all : $(NAME)
@@ -85,7 +82,6 @@ $(OBJS) : %.o: %.c $(HEADER)
 clean :
 	$(RM) $(OBJS)
 	$(RM) $(OBJS_BONUS)
-	$(RM) $(OBJS_PERSO)
 
 fclean : clean
 	$(RM) $(NAME)
@@ -98,11 +94,5 @@ bonus : $(OBJS) $(OBJS_BONUS)
 $(OBJS_BONUS) : %.o: %.c $(HEADER)
 	$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
 
-perso : $(OBJS) $(OBJS_BONUS) $(OBJS_PERSO)
-	ar rcs $(NAME) $^
-
-$(OBJS_PERSO) : %.o: %.c $(HEADER)
-	$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
-
-.PHONY: all clean fclean re bonus perso
+.PHONY: all clean fclean re bonus
 #.SILENT:

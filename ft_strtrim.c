@@ -23,8 +23,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 			end--;
 		if (beg != len_s1 && end != -1)
 			str = ft_substr(s1, beg, end - beg + 1);
-		else							//
-			str = ft_strdup("");		// '\0' || NULL
+		else							
+			str = ft_strdup("");
 	}
 	return (str);
 }
