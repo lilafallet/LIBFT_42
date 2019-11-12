@@ -6,14 +6,11 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:45:53 by lfallet           #+#    #+#             */
-/*   Updated: 2019/11/11 15:45:55 by lfallet          ###   ########.fr       */
+/*   Updated: 2019/11/12 10:51:29 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int c)
 {
-	if (c == -1)
-		return (c);
-	c = (c == (char)c) ? (unsigned char)c : (unsigned int)c;
 	return (c >= 'a' && c <= 'z' ? c - 32 : c);
 }

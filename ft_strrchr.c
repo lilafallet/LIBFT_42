@@ -6,11 +6,12 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:42:26 by lfallet           #+#    #+#             */
-/*   Updated: 2019/11/12 10:26:14 by lfallet          ###   ########.fr       */
+/*   Updated: 2019/11/12 10:46:16 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <sys/types.h>
 
 char	*ft_strrchr(const char *s, int c)
 {

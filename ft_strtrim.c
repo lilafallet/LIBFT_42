@@ -6,11 +6,12 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:42:51 by lfallet           #+#    #+#             */
-/*   Updated: 2019/11/12 10:27:15 by lfallet          ###   ########.fr       */
+/*   Updated: 2019/11/12 10:46:04 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <sys/types.h>
 
 char	*ft_strtrim(char const *s1, char const *set)
 {

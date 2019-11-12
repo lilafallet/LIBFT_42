@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:34:39 by lfallet           #+#    #+#             */
-/*   Updated: 2019/11/11 15:34:41 by lfallet          ###   ########.fr       */
+/*   Updated: 2019/11/12 10:55:24 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new_lst;
 
 	new_lst = NULL;
-	while (lst != NULL)
+	while (lst != NULL && f != NULL)
 	{
 		elem = ft_lstnew(f(lst->content));
 		if (elem == NULL)
