@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:39:02 by lfallet           #+#    #+#             */
-/*   Updated: 2019/11/12 10:25:23 by lfallet          ###   ########.fr       */
+/*   Updated: 2019/11/12 11:12:09 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ static void		ft_free_tab_str(char ***strs, size_t max_size)
 		i++;
 	}
 	free(*strs);
+	*strs = NULL;
 }
 
 static void		ft_process_split(char ***strs, char *s, char c)

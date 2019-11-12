@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:42:51 by lfallet           #+#    #+#             */
-/*   Updated: 2019/11/12 10:46:04 by lfallet          ###   ########.fr       */
+/*   Updated: 2019/11/12 11:34:26 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 		end = len_s1;
 		if (len_s1 > 0)
 			end--;
-		while (ft_strchr(set, s1[beg]) != NULL && s1[beg] != '\0')
+		while (s1[beg] != '\0' && ft_strchr(set, s1[beg]) != NULL)
 			beg++;
-		while (ft_strchr(set, s1[end]) != NULL && end >= 0)
+		while (end >= 0 && ft_strchr(set, s1[end]) != NULL)
 			end--;
-		if (beg != len_s1 && end != -1)
-			str = ft_substr(s1, beg, end - beg + 1);
-		else
-			str = ft_strdup("");
+		str = ft_substr(s1, beg, end - beg + 1);
 	}
 	return (str);
 }
