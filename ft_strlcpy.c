@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:40:21 by lfallet           #+#    #+#             */
-/*   Updated: 2019/11/11 15:40:23 by lfallet          ###   ########.fr       */
+/*   Updated: 2019/11/12 20:34:24 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 		if (dest != NULL && size != 0)
 		{
 			i = 0;
-			while (i < len && i < size - 1)
+			while ((i < len) && i < (size - 1))
 			{
 				dest[i] = src[i];
 				i++;

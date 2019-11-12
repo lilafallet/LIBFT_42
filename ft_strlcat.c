@@ -6,34 +6,37 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:40:11 by lfallet           #+#    #+#             */
-/*   Updated: 2019/11/12 11:40:33 by lfallet          ###   ########.fr       */
+/*   Updated: 2019/11/12 19:02:14 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	len_dest;
-	size_t	len_src;
-	size_t	j;
+	size_t tmp_size;
+	size_t dst_len;
+	size_t i;
+	size_t j;
 
-	len_dest = ft_strlen(dest);
-	len_src = ft_strlen(src);
+	i = 0;
 	j = 0;
-	if (size <= len_dest)
-		len_src += size;
-	else
-		len_src += len_dest;
-	if (size > len_dest)
+	tmp_size = size;
+	while (tmp_size-- && dst[i])
+		i++;
+	dst_len = i;
+	tmp_size = size - dst_len;
+	if (!tmp_size)
+		return (dst_len + ft_strlen(src));
+	while (src[j])
 	{
-		while (src[j] != '\0' && len_dest < size - 1)
+		if (tmp_size != 1)
 		{
-			dest[len_dest] = src[j];
-			len_dest++;
-			j++;
+			dst[i++] = src[j];
+			tmp_size--;
 		}
-		dest[len_dest] = '\0';
+		j++;
 	}
-	return (len_src);
+	dst[i] = '\0';
+	return (dst_len + j);
 }
