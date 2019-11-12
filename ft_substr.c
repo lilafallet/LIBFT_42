@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:44:14 by lfallet           #+#    #+#             */
-/*   Updated: 2019/11/11 15:44:16 by lfallet          ###   ########.fr       */
+/*   Updated: 2019/11/12 10:30:17 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 			str[len] = '\0';
 		}
 	}
-	return (str);	
+	return (str);
 }

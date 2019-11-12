@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:42:51 by lfallet           #+#    #+#             */
-/*   Updated: 2019/11/11 15:43:07 by lfallet          ###   ########.fr       */
+/*   Updated: 2019/11/12 10:27:15 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 			end--;
 		if (beg != len_s1 && end != -1)
 			str = ft_substr(s1, beg, end - beg + 1);
-		else							
+		else
 			str = ft_strdup("");
 	}
 	return (str);

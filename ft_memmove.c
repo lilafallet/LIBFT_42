@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:37:42 by lfallet           #+#    #+#             */
-/*   Updated: 2019/11/11 15:37:49 by lfallet          ###   ########.fr       */
+/*   Updated: 2019/11/12 10:22:35 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 		else
 		{
 			while (n-- > 0)
-			dst_cp[n] = src_cp[n];
+				dst_cp[n] = src_cp[n];
 		}
 	}
 	return (dst);

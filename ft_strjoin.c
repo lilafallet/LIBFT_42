@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:40:02 by lfallet           #+#    #+#             */
-/*   Updated: 2019/11/11 15:40:03 by lfallet          ###   ########.fr       */
+/*   Updated: 2019/11/12 10:24:07 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	str = NULL;
 	if (s1 != NULL && s2 != NULL)
 	{
-		len_s1 = ft_strlen(s1);	
-		len_s2 = ft_strlen(s2);	
+		len_s1 = ft_strlen(s1);
+		len_s2 = ft_strlen(s2);
 		len_str = len_s1 + len_s2;
 		str = (char *)malloc(sizeof(char) * (len_str + 1));
 		if (str != NULL)

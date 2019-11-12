@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:32:41 by lfallet           #+#    #+#             */
-/*   Updated: 2019/11/11 15:33:06 by lfallet          ###   ########.fr       */
+/*   Updated: 2019/11/12 10:21:51 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void		ft_fill_str(long n, char *str, size_t size)
 static size_t	ft_get_size_of_nbr(long n)
 {
 	size_t	size;
-	
+
 	size = (n <= 0);
 	while (n != 0)
 	{

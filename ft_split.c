@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:39:02 by lfallet           #+#    #+#             */
-/*   Updated: 2019/11/11 15:39:04 by lfallet          ###   ########.fr       */
+/*   Updated: 2019/11/12 10:25:23 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static void		ft_process_split(char ***strs, char *s, char c)
 		while (s[len] != c && s[len] != '\0')
 			len++;
 		if (len == 0)
-			break;
+			break ;
 		(*strs)[i] = ft_substr(s, 0, len);
 		if ((*strs)[i] == NULL)
 		{
@@ -63,13 +63,13 @@ static size_t	ft_get_word_count(char *s, char c)
 			while (*s == c)
 				s++;
 			if (*s == '\0')
-				break;
+				break ;
 			word_count++;
 		}
 		s++;
 	}
 	return (word_count);
-} 
+}
 
 char			**ft_split(char const *s1, char c)
 {

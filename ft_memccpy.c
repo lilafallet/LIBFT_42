@@ -6,13 +6,13 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:36:06 by lfallet           #+#    #+#             */
-/*   Updated: 2019/11/11 15:36:08 by lfallet          ###   ########.fr       */
+/*   Updated: 2019/11/12 10:20:48 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void *ft_memccpy(void *dest, void *src, int c, size_t n)
+void	*ft_memccpy(void *dest, void *src, int c, size_t n)
 {
 	size_t	i;
 

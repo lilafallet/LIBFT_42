@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:33:13 by lfallet           #+#    #+#             */
-/*   Updated: 2019/11/11 15:33:15 by lfallet          ###   ########.fr       */
+/*   Updated: 2019/11/12 10:18:49 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ void	ft_lstadd_back(t_list **alst, t_list *new)
 				begin = begin->next;
 			begin->next = new;
 		}
-	}	
+	}
 }
