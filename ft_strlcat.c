@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:40:11 by lfallet           #+#    #+#             */
-/*   Updated: 2019/11/12 19:02:14 by lfallet          ###   ########.fr       */
+/*   Updated: 2019/11/15 10:49:47 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	i = 0;
 	j = 0;
 	tmp_size = size;
-	while (tmp_size-- && dst[i])
+	while (tmp_size-- > 0 && dst[i] != '\0')
 		i++;
 	dst_len = i;
 	tmp_size = size - dst_len;
-	if (!tmp_size)
+	if (tmp_size != 0)
 		return (dst_len + ft_strlen(src));
-	while (src[j])
+	while (src[j] != '\0')
 	{
 		if (tmp_size != 1)
 		{
