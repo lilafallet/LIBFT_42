@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:40:11 by lfallet           #+#    #+#             */
-/*   Updated: 2019/11/15 10:49:47 by lfallet          ###   ########.fr       */
+/*   Updated: 2019/11/15 11:17:30 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		i++;
 	dst_len = i;
 	tmp_size = size - dst_len;
-	if (tmp_size != 0)
+	if (tmp_size == 0)
 		return (dst_len + ft_strlen(src));
 	while (src[j] != '\0')
 	{
