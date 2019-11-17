@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:41:27 by lfallet           #+#    #+#             */
-/*   Updated: 2019/11/17 17:16:54 by lfallet          ###   ########.fr       */
+/*   Updated: 2019/11/17 17:32:28 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	ft_same_char(char *big, const char *little, size_t len, size_t i)
 			return (FALSE);
 		count++;
 	}
-	return (little[i] == '\0');
+	return (little[count] == '\0');
 }
 
 char		*ft_strnstr(const char *big, const char *little, size_t len)
