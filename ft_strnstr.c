@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:41:27 by lfallet           #+#    #+#             */
-/*   Updated: 2019/11/17 16:59:45 by lfallet          ###   ########.fr       */
+/*   Updated: 2019/11/17 17:16:54 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ static int	ft_same_char(char *big, const char *little, size_t len, size_t i)
 	size_t count;
 
 	count = 0;
-	while (need[count] != '\0' && i + count <= len)
+	while (little[count] != '\0' && i + count <= len)
 	{
-		if (hay[count] != need[count])
+		if (big[count] != little[count])
 			return (FALSE);
 		count++;
 	}
-	return (need[i] == '\0');
+	return (little[i] == '\0');
 }
 
 char		*ft_strnstr(const char *big, const char *little, size_t len)
@@ -40,7 +40,7 @@ char		*ft_strnstr(const char *big, const char *little, size_t len)
 			return ((char *)big + i);
 		i++;
 	}
-	if (need[0] == '\0')
+	if (little[0] == '\0')
 		return ((char *)big);
 	return (NULL);
 }
