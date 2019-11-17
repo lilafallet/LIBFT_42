@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:40:11 by lfallet           #+#    #+#             */
-/*   Updated: 2019/11/15 11:17:30 by lfallet          ###   ########.fr       */
+/*   Updated: 2019/11/17 16:30:57 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,26 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t tmp_size;
-	size_t dst_len;
-	size_t i;
-	size_t j;
+	size_t	len_src;
+	size_t	len_dst;
+	size_t	run;
 
-	i = 0;
-	j = 0;
-	tmp_size = size;
-	while (tmp_size-- > 0 && dst[i] != '\0')
-		i++;
-	dst_len = i;
-	tmp_size = size - dst_len;
-	if (tmp_size == 0)
-		return (dst_len + ft_strlen(src));
-	while (src[j] != '\0')
+	len_src = ft_strlen(src);
+	len_dst = ft_strlen(dst);
+	run = 0;
+	if (size <= len_dst)
+		len_src = len_src + size;
+	else
+		len_src = len_src + len_dst;
+	if (size > len_dst)
 	{
-		if (tmp_size != 1)
+		while (src[run] != '\0' && len_dst < size - 1)
 		{
-			dst[i++] = src[j];
-			tmp_size--;
+			dst[len_dst] = src[run];
+			len_dst++;
+			run++;
 		}
-		j++;
+		dst[len_dst] = '\0';
 	}
-	dst[i] = '\0';
-	return (dst_len + j);
+	return (len_src);
 }

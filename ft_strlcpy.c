@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:40:21 by lfallet           #+#    #+#             */
-/*   Updated: 2019/11/12 20:34:24 by lfallet          ###   ########.fr       */
+/*   Updated: 2019/11/17 17:04:55 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,18 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	size_t	i;
 	size_t	len;
 
-	len = 0;
-	if (src != NULL)
+	if (dest == NULL || src == NULL)
+		return (0);
+	len = ft_strlen(src);
+	if (size != 0)
 	{
-		len = ft_strlen(src);
-		if (dest != NULL && size != 0)
+		i = 0;
+		while ((i < len) && i < (size - 1))
 		{
-			i = 0;
-			while ((i < len) && i < (size - 1))
-			{
-				dest[i] = src[i];
-				i++;
-			}
-			dest[i] = '\0';
+			dest[i] = src[i];
+			i++;
 		}
+		dest[i] = '\0';
 	}
 	return (len);
 }
