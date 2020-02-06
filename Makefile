@@ -6,7 +6,7 @@
 #    By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 15:19:15 by lfallet           #+#    #+#              #
-#    Updated: 2020/02/02 17:11:09 by lfallet          ###   ########.fr        #
+#    Updated: 2020/02/06 17:20:14 by lfallet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,7 @@ SRCS += ft_putstr_fd.c
 SRCS += ft_split.c
 SRCS += ft_strchr.c
 SRCS += ft_strdup.c
+SRCS += ft_strndup.c
 SRCS += ft_strjoin.c
 SRCS += ft_strlcat.c
 SRCS += ft_strlcpy.c
