@@ -6,7 +6,7 @@
 #    By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 15:19:15 by lfallet           #+#    #+#              #
-#    Updated: 2020/02/06 17:20:14 by lfallet          ###   ########.fr        #
+#    Updated: 2020/02/10 20:12:44 by lfallet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,7 @@ SRCS += ft_strncmp.c
 SRCS += ft_strnstr.c
 SRCS += ft_strrchr.c
 SRCS += ft_strtrim.c
+SRCS += ft_striter.c
 SRCS += ft_substr.c
 SRCS += ft_tolower.c
 SRCS += ft_toupper.c

@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:46:06 by lfallet           #+#    #+#             */
-/*   Updated: 2020/02/06 17:16:49 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/02/10 20:19:32 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ char				*ft_strtrim(char const *s1, char const *set);
 char				**ft_split(char const *s1, char c);
 char				*ft_itoa(int n);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char				*ft_striter(char *s, int (*f)(int));
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
