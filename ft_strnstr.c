@@ -26,18 +26,18 @@ static int	ft_same_char(char *big, const char *little, size_t len, size_t i)
 	return (little[count] == '\0');
 }
 
-char		*ft_strnstr(const char *big, const char *little, size_t len)
+char		*ft_strnstr(char *big, char *little, size_t len)
 {
 	size_t	i;
 
 	i = 0;
 	if (little[0] == '\0')
-		return ((char *)big);
+		return (big);
 	while (big[i] != '\0' && i <= len - 1)
 	{
 		if (big[i] == little[0] &&
-			ft_same_char((char *)big + i, little, len, i) == TRUE)
-			return ((char *)big + i);
+			ft_same_char(big + i, little, len, i) == TRUE)
+			return (big + i);
 		i++;
 	}
 	if (little[0] == '\0')

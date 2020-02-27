@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 static void		ft_fill_str(long n, char *str, size_t size)
 {

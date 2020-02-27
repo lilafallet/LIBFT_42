@@ -11,8 +11,9 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr(char *s, int c)
 {
 	size_t	count;
 

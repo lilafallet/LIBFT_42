@@ -15,8 +15,12 @@ NAME = libft.a
 CFLAGS += -Wall
 CFLAGS += -Wextra
 CFLAGS += -Werror
+ifeq ($(debug), 1)
+	CFLAGS += -fsanitize=address,undefined
+	CFLAGS += -g3
+endif
 
-CC = gcc
+CC = clang
 
 INCLUDES = ./
 
@@ -92,7 +96,8 @@ clean :
 fclean : clean
 	$(RM) $(NAME)
 
-re : fclean all
+re : fclean
+	$(MAKE)
 
 .PHONY: all bonus clean fclean re
 #.SILENT:

@@ -26,7 +26,7 @@ static void		ft_free_tab_str(char ***strs, size_t max_size)
 	*strs = NULL;
 }
 
-static void		ft_process_split(char ***strs, char *s, char c)
+static void		ft_process_split(char ***strs, const char *s, char c)
 {
 	size_t	len;
 	size_t	i;
@@ -52,7 +52,7 @@ static void		ft_process_split(char ***strs, char *s, char c)
 	}
 }
 
-static size_t	ft_get_word_count(char *s, char c)
+static size_t	ft_get_word_count(const char *s, char c)
 {
 	size_t	word_count;
 
@@ -80,12 +80,12 @@ char			**ft_split(char const *s1, char c)
 	strs = NULL;
 	if (s1 != NULL)
 	{
-		word_count = ft_get_word_count((char *)s1, c);
+		word_count = ft_get_word_count((const char *)s1, c);
 		strs = (char **)malloc(sizeof(char *) * (word_count + 1));
 		if (strs != NULL)
 		{
 			strs[word_count] = NULL;
-			ft_process_split(&strs, (char *)s1, c);
+			ft_process_split(&strs, s1, c);
 		}
 	}
 	return (strs);

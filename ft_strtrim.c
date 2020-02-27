@@ -13,7 +13,7 @@
 #include "libft.h"
 #include <sys/types.h>
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char *s1, char *set)
 {
 	char	*str;
 	size_t	beg;
@@ -27,14 +27,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 	{
 		beg = 0;
 		len_s1 = ft_strlen(s1);
-		end = len_s1;
+		end = (ssize_t)len_s1;
 		if (len_s1 > 0)
 			end--;
 		while (s1[beg] != '\0' && ft_strchr(set, s1[beg]) != NULL)
 			beg++;
 		while (end >= 0 && ft_strchr(set, s1[end]) != NULL)
 			end--;
-		str = ft_substr(s1, beg, end - beg + 1);
+		str = ft_substr(s1, (unsigned int)beg, ((size_t)(end) - beg + 1));
 	}
 	return (str);
 }
