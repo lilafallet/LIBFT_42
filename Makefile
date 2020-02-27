@@ -6,7 +6,7 @@
 #    By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 15:19:15 by lfallet           #+#    #+#              #
-#    Updated: 2020/02/10 20:12:44 by lfallet          ###   ########.fr        #
+#    Updated: 2020/02/15 12:07:54 by lfallet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,10 +84,10 @@ $(NAME): $(OBJS)
 bonus : $(OBJS_BONUS) $(OBJS)
 	ar rcs $(NAME) $^
 
-$(OBJS) : %.o: %.c $(HEADER)
+$(OBJS) : %.o: %.c $(HEADER) Makefile
 	$(CC) $(CFLAGS) -I$(INCLUDES) -c $< -o $@
 
-$(OBJS_BONUS) : %.o: %.c $(HEADER)
+$(OBJS_BONUS) : %.o: %.c $(HEADER) Makefile
 	$(CC) $(CFLAGS) -I$(INCLUDES) -c $< -o $@
 
 clean :
