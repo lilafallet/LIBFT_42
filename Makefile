@@ -6,7 +6,7 @@
 #    By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 15:19:15 by lfallet           #+#    #+#              #
-#    Updated: 2020/03/09 15:52:09 by lfallet          ###   ########.fr        #
+#    Updated: 2020/03/09 15:58:17 by lfallet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,6 @@ SRCS += ft_lstnew.c
 SRCS += ft_lstsize.c
 
 SRCS += get_next_line.c
-SRCS += get_next_line.h
 SRCS += get_next_line_multifd.c
 SRCS += get_next_line_utils.c
 
