@@ -6,7 +6,7 @@
 #    By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 15:19:15 by lfallet           #+#    #+#              #
-#    Updated: 2020/02/15 12:07:54 by lfallet          ###   ########.fr        #
+#    Updated: 2020/03/09 15:52:09 by lfallet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ CC = clang
 
 INCLUDES = ./
 
-HEADER = $(INCLUDES)libft.h
+HEADER += $(INCLUDES)libft.h
+HEADER += $(INCLUDES)get_next_line.h
 
 SRCS += ft_atoi.c
 SRCS += ft_bzero.c
@@ -63,31 +64,29 @@ SRCS += ft_substr.c
 SRCS += ft_tolower.c
 SRCS += ft_toupper.c
 
-BONUS += ft_lstadd_back.c
-BONUS += ft_lstadd_front.c
-BONUS += ft_lstclear.c
-BONUS += ft_lstdelone.c
-BONUS += ft_lstiter.c
-BONUS += ft_lstlast.c
-BONUS += ft_lstmap.c
-BONUS += ft_lstnew.c
-BONUS += ft_lstsize.c
+SRCS += ft_lstadd_back.c
+SRCS += ft_lstadd_front.c
+SRCS += ft_lstclear.c
+SRCS += ft_lstdelone.c
+SRCS += ft_lstiter.c
+SRCS += ft_lstlast.c
+SRCS += ft_lstmap.c
+SRCS += ft_lstnew.c
+SRCS += ft_lstsize.c
+
+SRCS += get_next_line.c
+SRCS += get_next_line.h
+SRCS += get_next_line_multifd.c
+SRCS += get_next_line_utils.c
 
 OBJS = $(SRCS:.c=.o)
-OBJS_BONUS = $(BONUS:.c=.o)
 
 all : $(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $@ $^
 
-bonus : $(OBJS_BONUS) $(OBJS)
-	ar rcs $(NAME) $^
-
 $(OBJS) : %.o: %.c $(HEADER) Makefile
-	$(CC) $(CFLAGS) -I$(INCLUDES) -c $< -o $@
-
-$(OBJS_BONUS) : %.o: %.c $(HEADER) Makefile
 	$(CC) $(CFLAGS) -I$(INCLUDES) -c $< -o $@
 
 clean :
