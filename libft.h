@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:46:06 by lfallet           #+#    #+#             */
-/*   Updated: 2020/02/10 20:19:32 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/03/10 16:57:45 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void				*ft_memset(void *s, int c, size_t n);
 void				ft_bzero(void *s, size_t n);
 int					ft_isascii(int c);
 void				*ft_memcpy(void *dest, const void *src, size_t n);
+void				*ft_memdup(void *s, size_t len);
 void				*ft_memmove(void *dest, const void *src, size_t n);
 void				*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void				*ft_memchr(void *s, int c, size_t n);

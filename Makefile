@@ -6,7 +6,7 @@
 #    By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 15:19:15 by lfallet           #+#    #+#              #
-#    Updated: 2020/03/09 15:58:17 by lfallet          ###   ########.fr        #
+#    Updated: 2020/03/10 16:56:19 by lfallet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,8 @@ SRCS += ft_memccpy.c
 SRCS += ft_memchr.c
 SRCS += ft_memcmp.c
 SRCS += ft_memcpy.c
+SRCS += ft_memdup.c
+SRCS += ft_memjoin_free.c
 SRCS += ft_memmove.c
 SRCS += ft_memset.c
 SRCS += ft_putchar_fd.c
