@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:46:06 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/10 16:57:45 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/03/10 20:43:48 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int					ft_memcmp(const void *s1, const void *s2, size_t n);
 void				*ft_calloc(size_t nmemb, size_t size);
 char				*ft_strdup(const char *s);
 char				*ft_strndup(const char *s, size_t n);
+void				ft_memjoin_free(char **dest, char *src, size_t len_dest,
+									size_t len_src);
 
 /*
 **** PART 2
@@ -85,5 +87,7 @@ void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
+
+# include <get_next_line.h>
 
 #endif

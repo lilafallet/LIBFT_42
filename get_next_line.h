@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/26 21:23:49 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/09 15:58:28 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/03/10 19:13:38 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # define FD_LIMITS 8193
 
 int					get_next_line(int fd, char **line);
+int					get_next_line_multifd(int fd, char **line);
 char				*ft_strjoinfree(char **s1, char **s2, int is_free);
 
 #endif

@@ -6,14 +6,14 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/10 16:49:04 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/10 16:51:40 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/03/10 17:23:15 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-void	memjoin_free(char **dest, char *src, size_t len_dest, size_t len_src)
+void	ft_memjoin_free(char **dest, char *src, size_t len_dest, size_t len_src)
 {
 	char	*str;
 	size_t	len_str;

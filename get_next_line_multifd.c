@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/09 15:47:08 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/09 15:52:25 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/03/10 19:13:38 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static int		get_rest(char **rest, char **line)
 			*line = ft_strjoinfree(line, rest, FREE_S2);
 		else
 		{
-			tmp = ft_strndup(*rest, i);
+			tmp = ft_strndup(*rest, (size_t)i);
 			*line = ft_strjoinfree(line, &tmp, FREE_S2);
 			tmp = ft_strndup(*rest + i + 1, ft_strlen(*rest + i + 1));
 		}
@@ -60,7 +60,7 @@ static int		get_rest(char **rest, char **line)
 static int		read_line(int fd, char **rest, char **line)
 {
 	char	buff[BUFFER_SIZE + 1];
-	int		ret;
+	ssize_t	ret;
 	char	*ptr_buff;
 	char	*keep;
 
@@ -81,7 +81,7 @@ static int		read_line(int fd, char **rest, char **line)
 		free(*rest);
 		return (0);
 	}
-	return ((ret != -1 && *rest != NULL) ? get_rest(rest, line) : ret);
+	return ((ret != -1 && *rest != NULL) ? get_rest(rest, line) : (int)ret);
 }
 
 int				get_next_line_multifd(int fd, char **line)
