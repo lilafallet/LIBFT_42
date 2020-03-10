@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/11 15:36:45 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/03 14:35:35 by lfallet          ###   ########.fr       */
+/*   Created: 2019/11/26 21:23:49 by lfallet           #+#    #+#             */
+/*   Updated: 2020/03/09 15:58:28 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
-{
-	size_t	i;
+# include <stdlib.h>
+# include "libft.h"
 
-	i = 0;
-	while (i < n)
-	{
-		if (((const unsigned char *)s1)[i] != ((const unsigned char *)s2)[i])
-		{
-			return (((const unsigned char *)s1)[i]
-						- ((const unsigned char *)s2)[i]);
-		}
-		i++;
-	}
-	return (0);
-}
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
+# define FREE_S1 1
+# define FREE_S2 2
+# define FD_LIMITS 8193
+
+int					get_next_line(int fd, char **line);
+char				*ft_strjoinfree(char **s1, char **s2, int is_free);
+
+#endif
