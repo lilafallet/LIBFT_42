@@ -6,12 +6,11 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/10 16:49:04 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/10 17:23:15 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/03/11 10:23:20 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
 
 void	ft_memjoin_free(char **dest, char *src, size_t len_dest, size_t len_src)
 {
@@ -21,7 +20,7 @@ void	ft_memjoin_free(char **dest, char *src, size_t len_dest, size_t len_src)
 	str = NULL;
 	len_str = len_dest + len_src;
 	if (*dest != NULL && src != NULL)
-	{
+	{		
 		str = (char *)malloc(sizeof(char) * (len_str + 1));
 		if (str != NULL)
 		{
