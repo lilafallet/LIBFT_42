@@ -6,7 +6,7 @@
 #    By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 15:19:15 by lfallet           #+#    #+#              #
-#    Updated: 2020/03/14 13:15:16 by lfallet          ###   ########.fr        #
+#    Updated: 2020/03/17 13:20:28 by lfallet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ ifeq ($(debug), 1)
 	CFLAGS += -g3
 endif
 
-CC = clang
+CC = gcc
 
 INCLUDES = ./
 
