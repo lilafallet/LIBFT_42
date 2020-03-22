@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libft.h"
 
 size_t	initialisation_x_conversion(t_option *option, t_option *cpy_option,
 										char **number, unsigned long x)

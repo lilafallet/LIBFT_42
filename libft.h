@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:46:06 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/22 17:30:05 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/03/22 17:36:26 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,6 +150,7 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 # define FREE_S2 2
 
 # include <stdarg.h>
+# include <stdint.h>
 
 enum				e_st
 {
@@ -192,7 +193,7 @@ int				ft_asprintf(char **ptr, const char *format, ...);
 
 int				is_conversion(const char c);
 void			ft_bzero(void *s, size_t n);
-int				is_flag(const char c);
+int				is_flag(const char *s);
 void			fill_buffer(t_st_machine *machine, char c);
 void			memjoin_free_option(char **dest, char *src, t_option *option);
 void			memjoin_free(char **dest, char *src, size_t len_dest,

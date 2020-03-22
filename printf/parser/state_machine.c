@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libft.h"
 
 int			letter_function(char *str, t_st_machine *machine,
 								va_list *argptr)

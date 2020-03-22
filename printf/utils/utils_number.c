@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   atoul.c                                            :+:      :+:    :+:   */
+/*   utils_number.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/03 15:16:44 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/03 15:16:45 by lfallet          ###   ########.fr       */
+/*   Created: 2020/03/03 15:16:55 by lfallet           #+#    #+#             */
+/*   Updated: 2020/03/03 15:16:56 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libft.h"
 
-unsigned long	atoul(const char *str)
+size_t	get_size_of_nb(char *s)
 {
-	size_t			i;
-	unsigned long	result;
+	size_t		i;
 
-	result = 0;
 	i = 0;
-	while ((*str >= 9 && *str <= 13) || *str == ' ')
-		str++;
-	if (str[0] == '-' || str[0] == '+')
+	if (*s == '*')
+		return (1);
+	while (ft_isdigit(s[i]) == TRUE)
 		i++;
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		result = result * 10 + (unsigned long)(str[i] - 48);
-		i++;
-	}
-	return (result);
+	return (i);
+}
+
+int		is_number(char *str)
+{
+	return (ft_isdigit(str[0]) || str[0] == '*');
 }

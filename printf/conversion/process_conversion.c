@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdarg.h>
-#include "libftprintf.h"
+#include "libft.h"
 
 void	initialisation(t_st_machine *machine)
 {
