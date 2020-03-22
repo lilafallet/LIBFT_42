@@ -15,7 +15,7 @@
 
 int			ft_dprintf(int fd, const char *format, ...)
 {
-	t_state_machine		machine;
+	t_st_machine		machine;
 	va_list				argptr;
 	int					ret;
 	ssize_t				ret_printf;
@@ -33,7 +33,7 @@ int			ft_dprintf(int fd, const char *format, ...)
 
 int			ft_asprintf(char **ptr, const char *format, ...)
 {
-	t_state_machine		machine;
+	t_st_machine		machine;
 	va_list				argptr;
 	int					ret;
 

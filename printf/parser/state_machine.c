@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   state_machine.c                                    :+:      :+:    :+:   */
+/*   st_machine.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int			letter_function(char *str, t_state_machine *machine,
+int			letter_function(char *str, t_st_machine *machine,
 								va_list *argptr)
 {
 	(void)argptr;
@@ -23,7 +23,7 @@ int			letter_function(char *str, t_state_machine *machine,
 	return (1);
 }
 
-static int	precision_width(char *str, t_state_machine *machine,
+static int	precision_width(char *str, t_st_machine *machine,
 								va_list *argptr, int is_precision)
 {
 	long				nb;
@@ -47,7 +47,7 @@ static int	precision_width(char *str, t_state_machine *machine,
 	return ((int)get_size_of_nb(str) + is_precision);
 }
 
-int			flag_function(char *str, t_state_machine *machine, va_list *argptr)
+int			flag_function(char *str, t_st_machine *machine, va_list *argptr)
 {
 	int					what_flag;
 
@@ -65,7 +65,7 @@ int			flag_function(char *str, t_state_machine *machine, va_list *argptr)
 	return (0);
 }
 
-int			conversion_function(char *str, t_state_machine *machine,
+int			conversion_function(char *str, t_st_machine *machine,
 									va_list *argptr)
 {
 	int		what_conv;

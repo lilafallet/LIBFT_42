@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:46:06 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/22 16:37:54 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/03/22 16:59:57 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,7 +140,7 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 
 # include <stdarg.h>
 
-enum				e_state
+enum				e_st
 {
 	LETTER,
 	FLAG,
@@ -161,19 +161,19 @@ typedef	struct	s_option
 	size_t			len_src;
 }				t_option;
 
-typedef struct	s_state_machine
+typedef struct	s_st_machine
 {
 	char			buffer[BUFFER_SIZE];
 	char			*out;
 	size_t			len;
 	size_t			len_out;
 	struct s_option	option;
-	enum e_state	state;
+	enum e_st		state;
 	char			char_error;
 	char			pad[3];
-}				t_state_machine;
+}				t_st_machine;
 
-typedef	int		(*t_function)(char *, t_state_machine *, va_list *);
+typedef	int		(*t_fun)(char *, t_st_machine *, va_list *);
 
 int				ft_printf(const char *format, ...);
 int				ft_dprintf(int fd, const char *format, ...);
@@ -182,15 +182,15 @@ int				ft_asprintf(char **ptr, const char *format, ...);
 int				is_conversion(const char c);
 void			ft_bzero(void *s, size_t n);
 int				is_flag(const char c);
-void			fill_buffer(t_state_machine *machine, char c);
+void			fill_buffer(t_st_machine *machine, char c);
 void			memjoin_free_option(char **dest, char *src, t_option *option);
 void			memjoin_free(char **dest, char *src, size_t len_dest,
 								size_t len_src);
-int				letter_function(char *str, t_state_machine *machine,
+int				letter_function(char *str, t_st_machine *machine,
 									va_list *argptr);
-int				flag_function(char *str, t_state_machine *machine,
+int				flag_function(char *str, t_st_machine *machine,
 									va_list *argptr);
-int				conversion_function(char *str, t_state_machine *machine,
+int				conversion_function(char *str, t_st_machine *machine,
 									va_list *argptr);
 char			*xminxmaj_conv(unsigned long x, t_option *option);
 char			*c_conv(int c, t_option *option);
@@ -202,10 +202,10 @@ char			*puxxmaj_conv(unsigned long diux, t_option *option);
 size_t			len_width(size_t width);
 char			*hub_strjoin_width_precision(char *str, t_option *option,
 												size_t len_str);
-void			preset_flag(t_state_machine *machine);
+void			preset_flag(t_st_machine *machine);
 int				it_is_csp(int flag);
-char			*process_conversion(va_list *argptr, t_state_machine *machine);
-void			initialisation(t_state_machine *machine);
+char			*process_conversion(va_list *argptr, t_st_machine *machine);
+void			initialisation(t_st_machine *machine);
 char			*ft_ultoa_base(unsigned long nb, unsigned long base);
 char			*ft_ltoa_base(long nb, long base);
 char			*ft_ltoa_base_post(long nb, long base);
@@ -237,7 +237,6 @@ void			initialisation_wipre_p_conversion(t_option *option,
 													t_option *cpy_option,
 													size_t len,
 													unsigned long p);
-void			*ft_memdup(void *s, size_t len);
-int				parser(char *format, va_list *argptr, t_state_machine *machine);
+int				parser(char *format, va_list *argptr, t_st_machine *machine);
 
 #endif

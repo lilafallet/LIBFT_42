@@ -6,25 +6,11 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 18:35:50 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/03 15:05:45 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/03/22 17:00:30 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	*ft_memdup(void *s, size_t len)
-{
-	void	*ptr;
-
-	ptr = NULL;
-	if (s != NULL)
-	{
-		ptr = malloc(len + 1);
-		ptr = ft_memcpy(ptr, s, len);
-		((char *)ptr)[len] = '\0';
-	}
-	return (ptr);
-}
 
 void	memjoin_free(char **dest, char *src, size_t len_dest, size_t len_src)
 {
@@ -51,7 +37,7 @@ void	memjoin_free(char **dest, char *src, size_t len_dest, size_t len_src)
 	*dest = str;
 }
 
-void	fill_buffer(t_state_machine *machine, char c)
+void	fill_buffer(t_st_machine *machine, char c)
 {
 	if (machine->len + 1 >= BUFFER_SIZE)
 	{

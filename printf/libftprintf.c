@@ -13,7 +13,7 @@
 #include "libft.h"
 #include <unistd.h>
 
-void		preset_flag(t_state_machine *machine)
+void		preset_flag(t_st_machine *machine)
 {
 	if (machine->option.flag & MOD_MINUS)
 		machine->option.flag &= ~MOD_ZERO;
@@ -24,7 +24,7 @@ void		preset_flag(t_state_machine *machine)
 		machine->option.flag &= ~MOD_ZERO;
 }
 
-static int	do_conv(va_list *argptr, t_state_machine *machine)
+static int	do_conv(va_list *argptr, t_st_machine *machine)
 {
 	char	*output;
 
@@ -40,9 +40,9 @@ static int	do_conv(va_list *argptr, t_state_machine *machine)
 	return (0);
 }
 
-int			parser(char *format, va_list *argptr, t_state_machine *machine)
+int			parser(char *format, va_list *argptr, t_st_machine *machine)
 {
-	static	t_function	function[3] = {letter_function, flag_function,
+	static	t_fun	function[3] = {letter_function, flag_function,
 										conversion_function};
 	int					ret;
 
@@ -64,7 +64,7 @@ int			parser(char *format, va_list *argptr, t_state_machine *machine)
 
 int			ft_printf(const char *format, ...)
 {
-	t_state_machine		machine;
+	t_st_machine		machine;
 	va_list				argptr;
 	int					ret;
 	ssize_t				ret_printf;

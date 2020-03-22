@@ -13,7 +13,7 @@
 #include <stdarg.h>
 #include "libft.h"
 
-void	initialisation(t_state_machine *machine)
+void	initialisation(t_st_machine *machine)
 {
 	ft_bzero(machine->buffer, BUFFER_SIZE);
 	machine->len = 0;
@@ -24,7 +24,7 @@ void	initialisation(t_state_machine *machine)
 	ft_bzero(&machine->option, sizeof(t_option));
 }
 
-char	*process_conversion(va_list *argptr, t_state_machine *machine)
+char	*process_conversion(va_list *argptr, t_st_machine *machine)
 {
 	char	*new_str;
 
