@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:46:06 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/22 17:36:26 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/03/22 17:44:56 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -205,6 +205,7 @@ int				flag_function(char *str, t_st_machine *machine,
 int				conversion_function(char *str, t_st_machine *machine,
 									va_list *argptr);
 char			*xminxmaj_conv(unsigned long x, t_option *option);
+char			*n_conv(long *ptr, t_option *option, size_t len);
 char			*c_conv(int c, t_option *option);
 char			*s_conv(char *str, t_option *option);
 char			*p_conv(unsigned long p, t_option *option);

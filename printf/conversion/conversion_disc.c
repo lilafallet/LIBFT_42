@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 15:14:30 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/03 15:23:10 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/03/22 17:43:50 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ char		*n_conv(long *ptr, t_option *option, size_t len)
 {
 	if (ptr != NULL)
 	{
-		*ptr = len;
+		*ptr = (long)len;
 		*ptr = modifier(*ptr, option->flag);
 	}
 	return (NULL);
