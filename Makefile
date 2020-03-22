@@ -6,7 +6,7 @@
 #    By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 15:19:15 by lfallet           #+#    #+#              #
-#    Updated: 2020/03/17 13:20:28 by lfallet          ###   ########.fr        #
+#    Updated: 2020/03/22 16:41:19 by lfallet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,6 +79,30 @@ SRCS += ft_lstsize.c
 SRCS += get_next_line.c
 SRCS += get_next_line_multifd.c
 SRCS += get_next_line_utils.c
+
+SRCS += libftprintf.c
+SRCS += printf_misc.c
+SRCS += state_machine.c
+SRCS += atoul.c
+SRCS += ft_ltoa_base.c
+SRCS += ft_ultoa_base.c
+SRCS += utils_precision_width.c
+SRCS += utils_string.c
+SRCS += conversion_disc.c
+SRCS += conversion_pux.c
+SRCS += join_p_conversion.c
+SRCS += join_x_conversion.c
+SRCS += process_conversion.c
+SRCS += utils_di_conversion.c
+SRCS += utils_p_conversion.c
+SRCS += utils_x_conversion.c
+SRCS += ft_ltoa_base_post.c
+SRCS += utils_number.c
+
+vpath %.c printf/
+vpath %.c printf/conversion/
+vpath %.c printf/utils/
+vpath %.c printf/parser/
 
 OBJS = $(SRCS:.c=.o)
 
