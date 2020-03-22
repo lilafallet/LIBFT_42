@@ -6,7 +6,7 @@
 #    By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 15:19:15 by lfallet           #+#    #+#              #
-#    Updated: 2020/03/22 17:49:25 by lfallet          ###   ########.fr        #
+#    Updated: 2020/03/22 17:51:26 by lfallet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,9 @@ else ifeq ($(debug), 4)
 	CFLAGS += -fsanitize=address,undefined
 	CFLAGS += -g3
 	CFLAGS += -Wpadded
-	CFLAGS += -Weverything
+	ifneq ($(CC), gcc)
+		CFLAGS += -Weverything
+	endif
 endif
 ifeq ($(err), 0)
 	CFLAGS += -g3
