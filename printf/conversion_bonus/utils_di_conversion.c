@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/10 17:53:11 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/03 13:32:05 by lfallet          ###   ########.fr       */
+/*   Created: 2020/03/03 15:14:58 by lfallet           #+#    #+#             */
+/*   Updated: 2020/03/03 15:14:59 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprintf.h"
 
 char	*add_minus(char *new_str)
 {

@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:46:06 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/22 16:59:57 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/03/22 17:30:05 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,9 +114,13 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 
 # define NB_FLAGS 3
 
-# define MOD_MINUS		0x000001
-# define MOD_ZERO		0x000002
-# define MOD_DOT		0x000004
+# define MOD_HH			0x000001
+# define MOD_LL			0x000002
+# define MOD_H			0x000004
+# define MOD_L			0x000008
+# define MOD_MINUS		0x000010
+# define MOD_ZERO		0x000020
+# define MOD_DOT		0x000040
 
 # define CONV_C			0x000100
 # define CONV_S			0x000200
@@ -126,14 +130,21 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 # define CONV_U			0x002000
 # define CONV_XMIN		0x004000
 # define CONV_XMAJ		0x008000
-# define CONV_PERCENT	0x010000
-# define CONV_ERROR		0x020000
-# define NB_CONV 9
-# define STR_CONV "cspdiuxX%"
+# define CONV_N			0x010000
+# define CONV_PERCENT	0x020000
+# define CONV_ERROR		0x040000
+# define NB_CONV 10
+# define STR_CONV "cspdiuxXn%"
 
 # define STAR	'*'
 
-# define STR_MOD "-0."
+# define STR_HH "hh"
+# define STR_LL "ll"
+# define STR_H "h"
+# define STR_L "l"
+# define STR_MIN "-"
+# define STR_ZERO "0"
+# define STR_DOT "."
 
 # define FREE_S1 1
 # define FREE_S2 2

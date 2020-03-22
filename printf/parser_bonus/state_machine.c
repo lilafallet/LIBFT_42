@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/05 14:13:44 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/03 14:00:07 by lfallet          ###   ########.fr       */
+/*   Created: 2020/03/03 15:15:23 by lfallet           #+#    #+#             */
+/*   Updated: 2020/03/03 15:15:24 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprintf.h"
 
 int			letter_function(char *str, t_st_machine *machine,
 								va_list *argptr)
@@ -51,12 +51,12 @@ int			flag_function(char *str, t_st_machine *machine, va_list *argptr)
 {
 	int					what_flag;
 
-	what_flag = is_flag(*str);
+	what_flag = is_flag(str);
 	if (what_flag != -1)
 	{
 		machine->option.flag |= 1 << what_flag;
 		if (*str != '.' || (*str == '.' && is_number(str + 1) == FALSE))
-			return (1);
+			return (what_flag < 2 ? 2 : 1);
 		str++;
 	}
 	if (is_number(str) == TRUE)

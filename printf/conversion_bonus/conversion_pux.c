@@ -5,14 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/05 14:13:08 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/03 13:43:35 by lfallet          ###   ########.fr       */
+/*   Created: 2020/03/03 15:14:33 by lfallet           #+#    #+#             */
+/*   Updated: 2020/03/03 15:23:50 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprintf.h"
 
-char	*xminxmaj_conv(unsigned long x, t_option *option)
+static unsigned long	modifier(unsigned long u, int flag)
+{
+	if (flag & MOD_HH)
+		u = (uint8_t)u;
+	else if (flag & MOD_H)
+		u = (uint16_t)u;
+	else if ((flag & MOD_L) || (flag & MOD_LL))
+		u = (uint64_t)u;
+	else
+		u = (uint32_t)u;
+	return (u);
+}
+
+char					*xminxmaj_conv(unsigned long x, t_option *option)
 {
 	char		*new_str;
 	char		*number;
@@ -20,7 +33,7 @@ char	*xminxmaj_conv(unsigned long x, t_option *option)
 	size_t		len;
 	char		*str_zero;
 
-	x = (unsigned int)x;
+	x = modifier(x, option->flag);
 	len = initialisation_x_conversion(option, &cpy_option, &number, x);
 	new_str = NULL;
 	str_zero = NULL;
@@ -39,7 +52,7 @@ char	*xminxmaj_conv(unsigned long x, t_option *option)
 	return (str_zero == NULL ? new_str : str_zero);
 }
 
-char	*p_conv(unsigned long p, t_option *option)
+char					*p_conv(unsigned long p, t_option *option)
 {
 	char		*new_str;
 	char		*number;
@@ -66,7 +79,7 @@ char	*p_conv(unsigned long p, t_option *option)
 	return (new_str);
 }
 
-char	*u_conv(unsigned long u, t_option *option)
+char					*u_conv(unsigned long u, t_option *option)
 {
 	char	*new_str;
 	char	*number;
@@ -74,7 +87,7 @@ char	*u_conv(unsigned long u, t_option *option)
 
 	number = NULL;
 	len = 0;
-	u = (unsigned int)u;
+	u = modifier(u, option->flag);
 	if (u > 0 || (u == 0 && ((option->flag & MOD_DOT) == FALSE)))
 	{
 		number = ft_ultoa_base(u, 10);
@@ -86,7 +99,7 @@ char	*u_conv(unsigned long u, t_option *option)
 	return (new_str);
 }
 
-char	*puxxmaj_conv(unsigned long nb, t_option *option)
+char					*puxxmaj_conv(unsigned long nb, t_option *option)
 {
 	char	*output;
 

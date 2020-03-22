@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/10 20:38:54 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/03 13:56:37 by lfallet          ###   ########.fr       */
+/*   Created: 2020/03/03 15:14:50 by lfallet           #+#    #+#             */
+/*   Updated: 2020/03/03 15:14:52 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprintf.h"
 
 static char		*not_mod_minus_x(char *new_str, t_option *origin,
 									t_option *option, char *number)

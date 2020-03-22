@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/05 14:14:22 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/03 13:58:53 by lfallet          ###   ########.fr       */
+/*   Created: 2020/03/03 15:15:05 by lfallet           #+#    #+#             */
+/*   Updated: 2020/03/03 15:15:06 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprintf.h"
 
 size_t		len_width(size_t width)
 {

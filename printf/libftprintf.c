@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libftprintf.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfallet <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/27 12:26:59 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/22 16:37:44 by lfallet          ###   ########.fr       */
+/*   Created: 2020/03/03 15:12:50 by lfallet           #+#    #+#             */
+/*   Updated: 2020/03/22 17:31:10 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ static int	do_conv(va_list *argptr, t_st_machine *machine)
 	char	*output;
 
 	preset_flag(machine);
-	output = process_conversion(argptr, machine);
 	memjoin_free(&machine->out, machine->buffer, machine->len_out,
 					machine->len);
 	machine->len_out += machine->len;
+	output = process_conversion(argptr, machine);
 	memjoin_free(&machine->out, output, machine->len_out,
 					machine->option.len_conversion);
 	free(output);

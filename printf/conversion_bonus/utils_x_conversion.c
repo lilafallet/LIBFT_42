@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/05 14:13:08 by lfallet           #+#    #+#             */
-/*   Updated: 2020/02/26 13:28:36 by lfallet          ###   ########.fr       */
+/*   Created: 2020/03/03 15:15:07 by lfallet           #+#    #+#             */
+/*   Updated: 2020/03/03 15:15:08 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprintf.h"
 
 size_t	initialisation_x_conversion(t_option *option, t_option *cpy_option,
 										char **number, unsigned long x)

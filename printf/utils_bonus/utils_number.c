@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   utils_number.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfallet <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/26 13:32:24 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/03 15:07:08 by lfallet          ###   ########.fr       */
+/*   Created: 2020/03/03 15:16:55 by lfallet           #+#    #+#             */
+/*   Updated: 2020/03/03 15:16:56 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprintf.h"
 
 size_t	get_size_of_nb(char *s)
 {

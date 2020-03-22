@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/10 20:38:54 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/03 15:05:24 by lfallet          ###   ########.fr       */
+/*   Created: 2020/03/03 15:14:47 by lfallet           #+#    #+#             */
+/*   Updated: 2020/03/03 15:14:48 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprintf.h"
 
 void			memjoin_free_option(char **dest, char *src, t_option *option)
 {

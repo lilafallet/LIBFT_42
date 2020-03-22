@@ -5,13 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/05 14:13:18 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/03 15:05:32 by lfallet          ###   ########.fr       */
+/*   Created: 2020/03/03 15:14:55 by lfallet           #+#    #+#             */
+/*   Updated: 2020/03/03 15:24:10 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
-#include "libft.h"
+#include "libftprintf.h"
 
 void	initialisation(t_st_machine *machine)
 {
@@ -43,6 +43,9 @@ char	*process_conversion(va_list *argptr, t_st_machine *machine)
 								&machine->option);
 	else if (machine->option.flag & CONV_PERCENT)
 		new_str = c_conv('%', &machine->option);
+	else if (machine->option.flag & CONV_N)
+		new_str = n_conv(va_arg(*argptr, long *), &machine->option,
+				machine->len_out);
 	else if (machine->option.flag & CONV_ERROR)
 		new_str = c_conv(machine->char_error, &machine->option);
 	if (new_str == NULL)

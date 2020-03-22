@@ -5,12 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/10 18:35:50 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/22 17:00:30 by lfallet          ###   ########.fr       */
+/*   Created: 2020/03/03 15:16:58 by lfallet           #+#    #+#             */
+/*   Updated: 2020/03/03 15:16:59 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprintf.h"
+
+void	*ft_memdup(void *s, size_t len)
+{
+	void	*ptr;
+
+	ptr = NULL;
+	if (s != NULL)
+	{
+		ptr = malloc(len + 1);
+		ptr = ft_memcpy(ptr, s, len);
+		((char *)ptr)[len] = '\0';
+	}
+	return (ptr);
+}
 
 void	memjoin_free(char **dest, char *src, size_t len_dest, size_t len_src)
 {
@@ -54,17 +68,18 @@ void	fill_buffer(t_st_machine *machine, char c)
 	}
 }
 
-int		is_flag(const char c)
+int		is_flag(const char *s)
 {
-	const char	str_mod[] = STR_MOD;
+	const char	*str_mod[] = {STR_HH, STR_LL, STR_H, STR_L, STR_MIN, STR_ZERO,
+								STR_DOT};
 	size_t		nb_mod;
 	size_t		i;
 
 	i = 0;
-	nb_mod = sizeof(str_mod) / sizeof(char);
+	nb_mod = sizeof(str_mod) / sizeof(char *);
 	while (i < nb_mod)
 	{
-		if (c == str_mod[i])
+		if (ft_memcmp(s, str_mod[i], i < 2 ? 2 : 1) == 0)
 			return ((int)i);
 		i++;
 	}

@@ -6,7 +6,7 @@
 #    By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 15:19:15 by lfallet           #+#    #+#              #
-#    Updated: 2020/03/22 16:41:19 by lfallet          ###   ########.fr        #
+#    Updated: 2020/03/22 17:15:44 by lfallet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,37 @@ NAME = libft.a
 
 CFLAGS += -Wall
 CFLAGS += -Wextra
-CFLAGS += -Werror
-ifeq ($(debug), 1)
+ifeq ($(debug), 0)
+	CFLAGS += -g3
+else ifeq ($(debug), 1)
 	CFLAGS += -fsanitize=address,undefined
 	CFLAGS += -g3
+else ifeq ($(debug), 2)
+	CFLAGS += -fsanitize=address,undefined
+	CFLAGS += -g3
+	CFLAGS += -pedantic
+	CFLAGS += -ansi
+else ifeq ($(debug), 3)
+	CFLAGS += -fsanitize=address,undefined
+	CFLAGS += -g3
+	CFLAGS += -pedantic
+	CFLAGS += -ansi
+	CFLAGS += -Wpadded
+else ifeq ($(debug), 4)
+	CFLAGS += -fsanitize=address,undefined
+	CFLAGS += -g3
+	CFLAGS += -pedantic
+	CFLAGS += -ansi
+	CFLAGS += -Wpadded
+	CFLAGS += -Weverything
+endif
+ifeq ($(err), 0)
+	CFLAGS += -g3
+else
+	CFLAGS += -Werror
 endif
 
-CC = gcc
+CC = clang
 
 INCLUDES = ./
 
