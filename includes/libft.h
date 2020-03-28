@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:46:06 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/28 14:36:16 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/03/28 16:28:47 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include "get_next_line.h"
+# include "vector.h"
 
 # define TRUE	1
 # define FALSE	0
@@ -261,11 +262,6 @@ char			*ft_ltoa_base(long nb, long base);
 char			*ft_ultoa_base(unsigned long nb, unsigned long base);
 void			ft_free_tab(size_t size, char **str);
 size_t			ft_is_len_zero(char *str);
-
-
-/*
-**** PRINTF
-*/
 
 
 #endif

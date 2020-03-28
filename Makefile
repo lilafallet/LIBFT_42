@@ -6,7 +6,7 @@
 #    By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 15:19:15 by lfallet           #+#    #+#              #
-#    Updated: 2020/03/28 16:22:55 by lfallet          ###   ########.fr        #
+#    Updated: 2020/03/28 16:31:14 by lfallet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -149,18 +149,22 @@ vpath %.c sources/string/
 vpath %.c sources/to_something/
 vpath %.c sources/vector/
 
-OBJS = $(SRCS:.c=.o)
+OBJS = $(patsubst %.c, $(OBJS_DIR)%.o, $(SRCS))
+OBJS_DIR = ./objs/
 
-all : $(NAME)
+all : $(OBJS_DIR) $(NAME)
+
+$(OBJS_DIR):
+	mkdir $@
 
 $(NAME): $(OBJS)
 	ar rcs $@ $^
 
-$(OBJS) : %.o: %.c $(HEADER) Makefile
+$(OBJS) : $(OBJS_DIR)%.o: %.c $(HEADER) Makefile
 	$(CC) $(CFLAGS) -I$(INCLUDES) -c $< -o $@
 
 clean :
-	$(RM) $(OBJS) $(OBJS_BONUS)
+	$(RM) -R $(OBJS_DIR)
 
 fclean : clean
 	$(RM) $(NAME)
