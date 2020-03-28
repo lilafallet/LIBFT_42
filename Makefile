@@ -6,7 +6,7 @@
 #    By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 15:19:15 by lfallet           #+#    #+#              #
-#    Updated: 2020/03/22 17:51:26 by lfallet          ###   ########.fr        #
+#    Updated: 2020/03/28 11:18:05 by lfallet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,10 +42,11 @@ endif
 
 CC = clang
 
-INCLUDES = ./
+INCLUDES = includes/
 
 HEADER += $(INCLUDES)libft.h
 HEADER += $(INCLUDES)get_next_line.h
+HEADER += $(INCLUDES)vector.h
 
 SRCS += ft_atoi.c
 SRCS += ft_bzero.c
@@ -96,6 +97,14 @@ SRCS += ft_lstmap.c
 SRCS += ft_lstnew.c
 SRCS += ft_lstsize.c
 
+SRCS += vct_add.c
+SRCS += vct_addstr.c
+SRCS += vct_del.c
+SRCS += vct_getlen.c
+SRCS += vct_getstr.c
+SRCS += vct_new.c
+SRCS += vct_resize.c
+
 SRCS += get_next_line.c
 SRCS += get_next_line_multifd.c
 SRCS += get_next_line_utils.c
@@ -119,10 +128,22 @@ SRCS += utils_x_conversion.c
 SRCS += ft_ltoa_base_post.c
 SRCS += utils_number.c
 
-vpath %.c printf/
-vpath %.c printf/conversion/
-vpath %.c printf/utils/
-vpath %.c printf/parser/
+vpath %.c sources/
+vpath %.c sources/conversion/
+vpath %.c sources/initialisation/
+vpath %.c sources/is_something/
+vpath %.c sources/list/
+vpath %.c sources/malloc/
+vpath %.c sources/mem/
+vpath %.c sources/print/
+vpath %.c sources/PROJECT_GET_NEXT_LINE/
+vpath %.c sources/PROJECT_PRINTF/
+vpath %.c sources/PROJECT_PRINTF/conversion/
+vpath %.c sources/PROJECT_PRINTF/utils/
+vpath %.c sources/PROJECT_PRINTF/parser/
+vpath %.c sources/string/
+vpath %.c sources/to_something/
+vpath %.c sources/vector/
 
 OBJS = $(SRCS:.c=.o)
 
