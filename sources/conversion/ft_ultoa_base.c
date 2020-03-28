@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ltoa_base.c                                     :+:      :+:    :+:   */
+/*   ft_ultoa_base.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/03 15:16:46 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/03 15:16:47 by lfallet          ###   ########.fr       */
+/*   Created: 2020/03/28 14:37:48 by lfallet           #+#    #+#             */
+/*   Updated: 2020/03/28 14:38:00 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ul_fill_str(char *str, long nb, size_t *size, long base)
+static void	ul_fill_str(char *str, unsigned long nb, size_t *size,
+					unsigned long base)
 {
 	if (nb < base)
 	{
@@ -29,11 +30,11 @@ static void	ul_fill_str(char *str, long nb, size_t *size, long base)
 	}
 }
 
-char		*ft_ltoa_base(long nb, long base)
+char		*ft_ultoa_base(unsigned long nb, unsigned long base)
 {
-	size_t	size;
-	long	tmp;
-	char	*str;
+	size_t				size;
+	unsigned long		tmp;
+	char				*str;
 
 	if (base < 2 || base > 16)
 		return (NULL);

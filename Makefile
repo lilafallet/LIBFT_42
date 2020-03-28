@@ -6,7 +6,7 @@
 #    By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 15:19:15 by lfallet           #+#    #+#              #
-#    Updated: 2020/03/28 11:18:05 by lfallet          ###   ########.fr        #
+#    Updated: 2020/03/28 16:22:55 by lfallet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,14 +49,18 @@ HEADER += $(INCLUDES)get_next_line.h
 HEADER += $(INCLUDES)vector.h
 
 SRCS += ft_atoi.c
+SRCS += ft_atoul.c
 SRCS += ft_bzero.c
 SRCS += ft_calloc.c
+SRCS += ft_free_tab.c
 SRCS += ft_isalnum.c
 SRCS += ft_isalpha.c
 SRCS += ft_isascii.c
 SRCS += ft_isdigit.c
+SRCS += ft_is_len_zero.c
 SRCS += ft_isprint.c
 SRCS += ft_itoa.c
+SRCS += ft_ltoa_base.c
 SRCS += ft_memccpy.c
 SRCS += ft_memchr.c
 SRCS += ft_memcmp.c
@@ -86,6 +90,7 @@ SRCS += ft_striter.c
 SRCS += ft_substr.c
 SRCS += ft_tolower.c
 SRCS += ft_toupper.c
+SRCS += ft_ultoa_base.c
 
 SRCS += ft_lstadd_back.c
 SRCS += ft_lstadd_front.c
@@ -113,8 +118,6 @@ SRCS += libftprintf.c
 SRCS += printf_misc.c
 SRCS += state_machine.c
 SRCS += atoul.c
-SRCS += ft_ltoa_base.c
-SRCS += ft_ultoa_base.c
 SRCS += utils_precision_width.c
 SRCS += utils_string.c
 SRCS += conversion_disc.c
@@ -136,6 +139,7 @@ vpath %.c sources/list/
 vpath %.c sources/malloc/
 vpath %.c sources/mem/
 vpath %.c sources/print/
+vpath %.c sources/tab/
 vpath %.c sources/PROJECT_GET_NEXT_LINE/
 vpath %.c sources/PROJECT_PRINTF/
 vpath %.c sources/PROJECT_PRINTF/conversion/

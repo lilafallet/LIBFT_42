@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:46:06 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/22 17:44:56 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/03/28 14:36:16 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -251,5 +251,21 @@ void			initialisation_wipre_p_conversion(t_option *option,
 													size_t len,
 													unsigned long p);
 int				parser(char *format, va_list *argptr, t_st_machine *machine);
+
+/*
+**** OTHER
+*/
+
+unsigned long	ft_atoul(const char *str);
+char			*ft_ltoa_base(long nb, long base);
+char			*ft_ultoa_base(unsigned long nb, unsigned long base);
+void			ft_free_tab(size_t size, char **str);
+size_t			ft_is_len_zero(char *str);
+
+
+/*
+**** PRINTF
+*/
+
 
 #endif
