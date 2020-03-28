@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_vector_get_next_line.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/27 19:25:01 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/27 19:40:43 by lfallet          ###   ########.fr       */
+/*   Created: 2020/03/28 17:00:23 by lfallet           #+#    #+#             */
+/*   Updated: 2020/03/28 17:08:30 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vector.h"
+#include <fcntl.h>
 #include <unistd.h>
+#include "get_next_line.h"
+#include <stdio.h>
 
-int		main(int ac, char **av)
+int	main(int ac, char **av)
 {
-	t_vector	*vct;
-	char		c;
+	int		fd;
+	char	*line;
+	int		ret;
 
-	c = 0;
-	if (ac == 4)
+	if (ac == 1)
+		return (EXIT_FAILURE);
+	line = NULL;
+	fd = open(av[1], O_RDONLY);
+	while ((ret = vct_gnl(fd, &line)) > 0)
 	{
-		vct = vct_new();
-		vct_addstr(vct, av[1]);
-		vct_addstr(vct, av[2]);
-		vct_add(vct, &c, 1);
-		vct_add(vct, &c, 1);
-		vct_add(vct, &c, 1);
-		vct_add(vct, &c, 1);
-		vct_addstr(vct, av[3]);
-		ft_printf("la string: [");
-		write(1, vct_getstr(vct), vct_getlen(vct));
-		ft_printf("]\n");
-		vct_del(&vct);
+		printf("line : |%s| ret : %d\n", line, ret);
+		free(line);
+		line = NULL;
 	}
+	printf("line : |%s| ret : %d\n", line, ret);
+	free(line);
+	close(fd);
 	return (EXIT_SUCCESS);
 }
