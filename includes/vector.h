@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/27 19:00:06 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/28 22:53:26 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/03/29 16:55:17 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,6 @@ ssize_t		vct_getlen(t_vector *vct);
 char		*vct_getstr(t_vector *vct);
 size_t		vct_len(t_vector *vct);
 size_t		vct_nlen(t_vector *vct, size_t n);
+size_t		vct_clen(t_vector *vct, char c);
 
 #endif
