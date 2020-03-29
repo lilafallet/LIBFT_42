@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vct_getlen.c                                    :+:      :+:    :+:   */
+/*   vct_clen.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/29 17:05:58 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/29 17:11:52 by lfallet          ###   ########.fr       */
+/*   Created: 2020/03/29 17:40:29 by lfallet           #+#    #+#             */
+/*   Updated: 2020/03/29 17:43:27 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
 
-ssize_t	ft_vct_getlen(t_vector *vct)
+size_t	vct_clen(t_vector *vct, char c)
 {
-	if (vct != NULL)
-		return ((ssize_t)vct->len);
-	return (FAILURE);
+	size_t	i;
+
+	i = 0;
+	if (vct == NULL)
+		return (0);
+	while (i < vct->len)
+	{
+		if (vct->str[i] == c)
+			break ;
+		i++;
+	}
+	return (i);	
 }

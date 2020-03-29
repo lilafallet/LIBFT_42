@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vct_clen.c                                      :+:      :+:    :+:   */
+/*   vct_add.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/29 17:05:41 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/29 17:11:24 by lfallet          ###   ########.fr       */
+/*   Created: 2020/03/29 17:34:22 by lfallet           #+#    #+#             */
+/*   Updated: 2020/03/29 17:34:25 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
 
-size_t	ft_vct_clen(t_vector *vct, char c)
+int		vct_add(t_vector *vct, char *str, size_t len)
 {
-	size_t	i;
-
-	i = 0;
-	if (vct == NULL)
-		return (0);
-	while (i < vct->len)
+	if (vct != NULL && str != NULL)
 	{
-		if (vct->str[i] == c)
-			break ;
-		i++;
+		if (len + vct->len >= vct->size)
+			if (vct_resize(vct, len + vct->len) == FAILURE)
+				return (FAILURE);
+		ft_memmove(vct->str + vct->len, str, len);
+		vct->len += len;
 	}
-	return (i);	
+	return (SUCCESS);
 }

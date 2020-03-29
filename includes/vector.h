@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/27 19:00:06 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/29 17:19:29 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/03/29 20:27:13 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,16 @@ typedef struct	s_vector
 		size_t	resize;
 }				t_vector;
 
-int			ft_vct_addstr(t_vector *vct, char *str);
-int			ft_vct_add(t_vector *vct, char *str, size_t len);
-int			ft_vct_resize(t_vector *vct, size_t len);
-void		ft_vct_del(t_vector **vct);
-t_vector	 *ft_vct_new(void);
-ssize_t		ft_vct_getlen(t_vector *vct);
-char		*ft_vct_getstr(t_vector *vct);
-size_t		ft_vct_len(t_vector *vct);
-size_t		ft_vct_nlen(t_vector *vct, size_t n);
-size_t		ft_vct_clen(t_vector *vct, char c);
+int			vct_addstr(t_vector *vct, char *str);
+int			vct_add(t_vector *vct, char *str, size_t len);
+int			vct_resize(t_vector *vct, size_t len);
+void		vct_del(t_vector **vct);
+t_vector	 *vct_new(void);
+char		*vct_getstr(t_vector *vct);
+size_t		vct_getlen(t_vector *vct);
+size_t		vct_nlen(t_vector *vct, size_t n);
+size_t		vct_clen(t_vector *vct, char c);
+void		vct_print(t_vector *vct);
+void		vct_print_fd(t_vector *vct, int fd);
 
 #endif

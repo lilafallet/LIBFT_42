@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vct_getstr.c                                    :+:      :+:    :+:   */
+/*   vct_del.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/29 17:06:05 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/29 17:12:00 by lfallet          ###   ########.fr       */
+/*   Created: 2020/03/29 17:34:35 by lfallet           #+#    #+#             */
+/*   Updated: 2020/03/29 17:34:37 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
 
-char	*ft_vct_getstr(t_vector *vct)
+void	vct_del(t_vector **vct)
 {
-	if (vct != NULL)
-		return (vct->str);
-	return (NULL);
+	if (vct != NULL && *vct != NULL)
+	{
+		free((*vct)->str);
+		free(*vct);
+		*vct = NULL;
+	}
 }

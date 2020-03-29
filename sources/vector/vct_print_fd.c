@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vct_nlen.c                                      :+:      :+:    :+:   */
+/*   vct_print_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/29 17:09:56 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/29 17:10:55 by lfallet          ###   ########.fr       */
+/*   Created: 2020/03/29 20:24:23 by lfallet           #+#    #+#             */
+/*   Updated: 2020/03/29 20:25:28 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
+#include "unistd.h"
 
-size_t	ft_vct_nlen(t_vector *vct, size_t n)
+void	vct_print_fd(t_vector *vct, int fd)
 {
-	if (vct == NULL)
-		return (0);
-	if (n > vct->len)
-		n = vct->len;
-	return (n);	
+	write(fd, vct_getstr(vct), vct_getlen(vct));
 }

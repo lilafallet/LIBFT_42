@@ -1,38 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_add_str_del_getlen_get_str_new_resiz          :+:      :+:    :+:   */
+/*   vct_print.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/28 19:57:12 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/29 17:41:11 by lfallet          ###   ########.fr       */
+/*   Created: 2020/03/29 17:35:41 by lfallet           #+#    #+#             */
+/*   Updated: 2020/03/29 17:35:43 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
-#include <unistd.h>
+#include "unistd.h"
 
-int		main(int ac, char **av)
+void	vct_print(t_vector *vct)
 {
-	t_vector	*vct;
-	char		c;
-
-	c = 0;
-	if (ac == 4)
-	{
-		vct = vct_new();
-		vct_addstr(vct, av[1]);
-		vct_addstr(vct, av[2]);
-		vct_add(vct, &c, 1);
-		vct_add(vct, &c, 1);
-		vct_add(vct, &c, 1);
-		vct_add(vct, &c, 1);
-		vct_addstr(vct, av[3]);
-		ft_printf("la string: [");
-		write(1, vct_getstr(vct), vct_getlen(vct));
-		ft_printf("]\n");
-		vct_del(&vct);
-	}
-	return (EXIT_SUCCESS);
+	write(STDOUT_FILENO, vct_getstr(vct), vct_getlen(vct));
 }
