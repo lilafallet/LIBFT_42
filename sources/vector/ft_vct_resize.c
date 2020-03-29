@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vct_resize.c                                       :+:      :+:    :+:   */
+/*   ft_vct_resize.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/28 10:13:49 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/28 10:14:32 by lfallet          ###   ########.fr       */
+/*   Created: 2020/03/29 17:08:36 by lfallet           #+#    #+#             */
+/*   Updated: 2020/03/29 17:12:52 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
 
-int		vct_resize(t_vector *vct, size_t len)
+int		ft_vct_resize(t_vector *vct, size_t len)
 {
 	size_t	new_len;
 	char	*str;

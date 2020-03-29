@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vct_del.c                                          :+:      :+:    :+:   */
+/*   ft_vct_clen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/28 10:13:04 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/28 10:13:25 by lfallet          ###   ########.fr       */
+/*   Created: 2020/03/29 17:05:41 by lfallet           #+#    #+#             */
+/*   Updated: 2020/03/29 17:11:24 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
 
-void	vct_del(t_vector **vct)
+size_t	ft_vct_clen(t_vector *vct, char c)
 {
-	if (vct != NULL && *vct != NULL)
+	size_t	i;
+
+	i = 0;
+	if (vct == NULL)
+		return (0);
+	while (i < vct->len)
 	{
-		free((*vct)->str);
-		free(*vct);
-		*vct = NULL;
+		if (vct->str[i] == c)
+			break ;
+		i++;
 	}
+	return (i);	
 }

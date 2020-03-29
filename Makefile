@@ -6,7 +6,7 @@
 #    By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 15:19:15 by lfallet           #+#    #+#              #
-#    Updated: 2020/03/29 16:40:27 by lfallet          ###   ########.fr        #
+#    Updated: 2020/03/29 17:20:14 by lfallet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -102,16 +102,16 @@ SRCS += ft_lstmap.c
 SRCS += ft_lstnew.c
 SRCS += ft_lstsize.c
 
-SRCS += vct_add.c
-SRCS += vct_addstr.c
-SRCS += vct_del.c
-SRCS += vct_getlen.c
-SRCS += vct_getstr.c
-SRCS += vct_new.c
-SRCS += vct_resize.c
-SRCS += vct_len.c
-SRCS += vct_nlen.c
-SRCS += vct_clen.c
+SRCS += ft_vct_add.c
+SRCS += ft_vct_addstr.c
+SRCS += ft_vct_del.c
+SRCS += ft_vct_getlen.c
+SRCS += ft_vct_getstr.c
+SRCS += ft_vct_new.c
+SRCS += ft_vct_resize.c
+SRCS += ft_vct_len.c
+SRCS += ft_vct_nlen.c
+SRCS += ft_vct_clen.c
 
 SRCS += get_next_line.c
 SRCS += get_next_line_multifd.c

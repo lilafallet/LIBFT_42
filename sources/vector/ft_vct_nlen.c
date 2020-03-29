@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vct_nlen.c                                         :+:      :+:    :+:   */
+/*   ft_vct_nlen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/28 22:30:58 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/28 22:51:13 by lfallet          ###   ########.fr       */
+/*   Created: 2020/03/29 17:09:56 by lfallet           #+#    #+#             */
+/*   Updated: 2020/03/29 17:10:55 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
-#include "stdio.h" /*debug*/
 
-size_t	vct_nlen(t_vector *vct, size_t n)
+size_t	ft_vct_nlen(t_vector *vct, size_t n)
 {
 	if (vct == NULL)
 		return (0);

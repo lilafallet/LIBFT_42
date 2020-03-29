@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vct_clen.c                                         :+:      :+:    :+:   */
+/*   ft_vct_new.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/29 16:07:43 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/29 16:55:17 by lfallet          ###   ########.fr       */
+/*   Created: 2020/03/29 17:06:31 by lfallet           #+#    #+#             */
+/*   Updated: 2020/03/29 17:12:39 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
 
-size_t	vct_clen(t_vector *vct, char c)
+t_vector *ft_vct_new(void)
 {
-	size_t	i;
+	t_vector	*vct;
 
-	i = 0;
-	if (vct == NULL)
-		return (0);
-	while (i < vct->len)
+	vct = (t_vector *)malloc(sizeof(t_vector));
+	if (vct != NULL)
 	{
-		if (vct->str[i] == c)
-			break ;
-		i++;
+		vct->size = DEFAULT_VECTOR_SIZE;
+		vct->resize = DEFAULT_VECTOR_RESIZE;
+		vct->len = 0;
+		vct->str = (char *)malloc(sizeof(char) * vct->size);	
+		if (vct->str == NULL)
+		{
+			free(vct);
+			vct = NULL;
+		}
+		else
+			ft_bzero(vct->str, vct->size);
 	}
-	return (i);	
+	return (vct);
 }

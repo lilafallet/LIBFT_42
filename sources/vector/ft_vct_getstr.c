@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vct_len.c                                          :+:      :+:    :+:   */
+/*   ft_vct_getstr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/28 20:09:23 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/28 20:16:59 by lfallet          ###   ########.fr       */
+/*   Created: 2020/03/29 17:06:05 by lfallet           #+#    #+#             */
+/*   Updated: 2020/03/29 17:12:00 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
 
-size_t	vct_len(t_vector *vct)
+char	*ft_vct_getstr(t_vector *vct)
 {
-	if (vct == NULL)
-		return (0);
-	return (vct->len);
+	if (vct != NULL)
+		return (vct->str);
+	return (NULL);
 }
