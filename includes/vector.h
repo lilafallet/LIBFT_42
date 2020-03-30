@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/27 19:00:06 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/30 17:08:33 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/03/30 19:13:05 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,6 @@ int			vct_cut(t_vector *vct);
 int			vct_push(t_vector *vct, char c);
 int			vct_popfrom(t_vector *vct, size_t nb_of_char);
 int			vct_cutfrom(t_vector *vct, size_t nb_of_char);
+int			vct_pushstr(t_vector *vct, char *str);
 
 #endif
