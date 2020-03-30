@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_vct_cut.c                                     :+:      :+:    :+:   */
+/*   main_vct_push.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/30 13:53:24 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/30 14:08:10 by lfallet          ###   ########.fr       */
+/*   Created: 2020/03/30 14:07:14 by lfallet           #+#    #+#             */
+/*   Updated: 2020/03/30 14:10:19 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,19 +28,19 @@ int	main(int ac, char **av)
 		vct3 = vct_new();
 		vct4 = vct_new();
 		vct_addstr(vct1, av[1]);
-		ret = vct_cut(vct1);
+		ret = vct_push(vct1, ' ');
 		printf("ret = %d\n", ret);
 		vct_printendl(vct1);
 		vct_addstr(vct2, av[2]);
-		ret = vct_cut(vct2);
+		ret = vct_push(vct2, 'A');
 		printf("ret = %d\n", ret);
 		vct_printendl(vct2);
 		vct_addstr(vct3, av[3]);
-		ret = vct_cut(vct3);
+		ret = vct_push(vct3, '2');
 		printf("ret = %d\n", ret);
 		vct_printendl(vct3);
 		vct_addstr(vct4, av[4]);
-		ret = vct_cut(vct4);
+		ret = vct_push(vct4, '/');
 		printf("ret = %d\n", ret);
 		vct_printendl(vct4);
 		vct_del(&vct1);
@@ -51,3 +51,4 @@ int	main(int ac, char **av)
 	}
 	return (EXIT_FAILURE);
 }
+
