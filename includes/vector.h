@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/27 19:00:06 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/29 20:38:04 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/03/30 13:37:19 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,6 @@ void		vct_print(t_vector *vct);
 void		vct_print_fd(t_vector *vct, int fd);
 void		vct_printendl(t_vector *vct);
 void		vct_printendl_fd(t_vector *vct, int fd);
+int		vct_pop(t_vector *vct);
 
 #endif
