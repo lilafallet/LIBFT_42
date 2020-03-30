@@ -6,7 +6,7 @@
 #    By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 15:19:15 by lfallet           #+#    #+#              #
-#    Updated: 2020/03/30 15:35:35 by lfallet          ###   ########.fr        #
+#    Updated: 2020/03/30 16:42:28 by lfallet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -118,6 +118,7 @@ SRCS += vct_printendl_fd.c
 SRCS += vct_pop.c
 SRCS += vct_cut.c
 SRCS += vct_push.c
+SRCS += vct_popfrom.c
 
 SRCS += get_next_line.c
 SRCS += get_next_line_multifd.c
