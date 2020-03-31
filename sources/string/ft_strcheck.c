@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strcheck.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/11 15:45:40 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/31 21:33:34 by lfallet          ###   ########.fr       */
+/*   Created: 2020/03/31 21:22:12 by lfallet           #+#    #+#             */
+/*   Updated: 2020/03/31 21:22:37 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+int		ft_strcheck(char *s, int (*f)(int))
 {
-	return (c >= 'A' && c <= 'Z' ? c + 32 : c);
+	unsigned int	i;
+
+	if (s == NULL || f == NULL)
+		return (FALSE);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (f(s[i]) == FALSE)
+			return (FALSE);
+		i++;
+	}
+	return (TRUE);
 }

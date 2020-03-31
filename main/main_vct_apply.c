@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/31 11:25:00 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/31 16:56:29 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/03/31 21:34:55 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,25 +45,25 @@ int	main(int ac, char **av)
 		vct_printendl(vct2);
 		vct_addstr(vct3, av[3]);
 		ret = vct_apply(vct3, TO_ATOI);
-		vct_printendl(vct3);
+		printf("ret = %d\n", ret); /*debug*/
 		vct_addstr(vct4, av[4]);
-		ret = vct_apply(vct4, TO_ATOUL);
-		vct_printendl(vct4);
+		ret = vct_apply(vct4, TO_ATOI);
+		printf("ret = %d\n", ret); /*debug*/
 		vct_addstr(vct5, av[5]);
 		ret = vct_apply(vct5, IS_ALNUM);
-		vct_printendl(vct5);
+		printf("ret = %d\n", ret); /*debug*/
 		vct_addstr(vct6, av[6]);
 		ret = vct_apply(vct6, IS_ALPHA);
-		vct_printendl(vct6);
+		printf("ret = %d\n", ret); /*debug*/
 		vct_addstr(vct7, av[7]);
 		ret = vct_apply(vct7, IS_ASCII);
-		vct_printendl(vct7);
+		printf("ret = %d\n", ret); /*debug*/
 		vct_addstr(vct8, av[8]);
 		ret = vct_apply(vct8, IS_DIGIT);
-		vct_printendl(vct8);
+		printf("ret = %d\n", ret); /*debug*/
 		vct_addstr(vct9, av[9]);
 		ret = vct_apply(vct9, IS_PRINT);
-		vct_printendl(vct9);
+		printf("ret = %d\n", ret); /*debug*/
 		vct_del(&vct1);
 		vct_del(&vct2);
 		vct_del(&vct3);

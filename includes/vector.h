@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/27 19:00:06 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/31 18:01:26 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/03/31 21:28:04 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,6 @@
 # define NB_CONVERSION 2
 # define NB_TOIS 7
 
-enum	e_apply_conv
-{
-	TO_ATOI,
-	TO_ATOUL
-};
 
 enum	e_apply_tois
 {
@@ -51,17 +46,9 @@ enum	e_apply_tois
 	IS_ALPHA,
 	IS_ASCII,
 	IS_DIGIT,
-	IS_PRINT
+	IS_PRINT,
+	TO_ATOI,
 };
-
-typedef struct s_apply
-{
-	enum e_apply_conv	apply_conv;
-	enum e_apply_tois	apply_tois;
-	int					ret_d;
-	unsigned long		ret_ul;
-
-}				t_apply;
 
 typedef struct	s_vector
 {
@@ -69,10 +56,9 @@ typedef struct	s_vector
 		size_t			size;
 		size_t			len;
 		size_t			resize;
-		struct s_apply	apply;
-		
-		char			pad[4];
 }				t_vector;
+
+typedef int	(*ic_function)(int);
 
 int			vct_addstr(t_vector *vct, char *str);
 int			vct_add(t_vector *vct, char *str, size_t len);
