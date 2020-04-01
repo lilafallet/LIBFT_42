@@ -1,4 +1,14 @@
-//pensez a mettre le header
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main_vctcdup.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/04/01 16:55:32 by lfallet           #+#    #+#             */
+/*   Updated: 2020/04/01 16:55:35 by lfallet          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "vector.h"
 #include <stdio.h>
@@ -13,7 +23,6 @@ int	main(int ac, char **av)
 	t_vector	*new2;
 	t_vector	*new3;
 	t_vector	*new4;
-	ssize_t		len;
 
 	if (ac == 5)
 	{
@@ -37,6 +46,10 @@ int	main(int ac, char **av)
 		vct_del(&vct2);
 		vct_del(&vct3);
 		vct_del(&vct4);
+		vct_del(&new1);
+		vct_del(&new2);
+		vct_del(&new3);
+		vct_del(&new4);
 		return (EXIT_SUCCESS);
 	}
 	return (EXIT_FAILURE);
