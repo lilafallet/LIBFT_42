@@ -125,6 +125,7 @@ SRCS += vct_pushstr.c
 SRCS += vct_addstrat.c
 SRCS += vct_addcharat.c
 SRCS += vct_apply.c
+SRCS += vct_cat.c
 
 SRCS += get_next_line.c
 SRCS += get_next_line_multifd.c
