@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:46:06 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/02 18:54:22 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/02 21:53:26 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,6 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 4096
 # endif
-
-/*
-**** PART 1
-*/
 
 size_t				ft_strlen(const char *s);
 size_t				ft_strclen(const char *str, char c);
@@ -56,11 +52,6 @@ char				*ft_strdup(const char *s);
 char				*ft_strndup(const char *s, size_t n);
 void				ft_memjoin_free(char **dest, char *src, size_t len_dest,
 									size_t len_src);
-
-/*
-**** PART 2
-*/
-
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char *s1, char *set);
@@ -73,10 +64,8 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
-
-/*
-**** PART BONUS
-*/
+ssize_t				ft_putstr(char *str);
+ssize_t				ft_putendl(char *str);
 
 typedef struct		s_list
 {
