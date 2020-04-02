@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/27 19:00:06 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/01 16:33:38 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/02 11:20:24 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,6 @@ int			vct_addcharat(t_vector *vct, size_t index, char c);
 int			vct_apply(t_vector *vct, int flag);
 void		vct_cat(t_vector *dest, t_vector *src);
 t_vector	*vct_cdup(t_vector *vct, char c);
+t_vector	*vct_dup(t_vector *vct);
 
 #endif
