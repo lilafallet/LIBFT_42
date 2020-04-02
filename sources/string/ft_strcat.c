@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_putnbr.c                                      :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/02 22:06:58 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/02 22:20:13 by lfallet          ###   ########.fr       */
+/*   Created: 2020/04/02 22:13:55 by lfallet           #+#    #+#             */
+/*   Updated: 2020/04/02 22:15:41 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-void	test(char *input1, char *input2)
+char	*ft_strcat(char *dest, char *src)
 {
-	char *new_str;
+	int	i;
+	int	j;
 
-	new_str = ft_strcat(input1, input2);
-	printf("new_str = %s\n", new_str); /*debug*/
-}
-
-int	main(int ac, char **av)
-{
-	int		i;
-	
-	i = 1;
-	while (i < ac)
+	i = 0;
+	j = 0;
+	while (dest[i] != '\0')
+		i++;
+	while (src[j] != '\0')
 	{
-		test(av[i], av[i + 1]);
-		i += 2;
+		dest[i] = src[j];
+		j++;
+		i++;
 	}
-	return (EXIT_SUCCESS);
+	dest[i] = '\0';
+	return (dest);	
 }
-

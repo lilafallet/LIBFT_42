@@ -6,7 +6,7 @@
 #    By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 15:19:15 by lfallet           #+#    #+#              #
-#    Updated: 2020/04/02 22:06:18 by lfallet          ###   ########.fr        #
+#    Updated: 2020/04/02 22:16:30 by lfallet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -96,6 +96,7 @@ SRCS += ft_ultoa_base.c
 SRCS += ft_putstr.c
 SRCS += ft_putendl.c
 SRCS += ft_putnbr.c
+SRCS += ft_strcat.c
 
 SRCS += ft_lstadd_back.c
 SRCS += ft_lstadd_front.c

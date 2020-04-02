@@ -6,14 +6,14 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/02 22:04:13 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/02 22:04:40 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/02 22:18:47 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <unistd.h>
 
-void	ft_putchar(char c)
+static void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
@@ -36,5 +36,5 @@ void	ft_putnbr(int nb)
 		ft_putnbr(nb % 10);
 	}
 	else
-		ft_putchar(nb + 48);
+		ft_putchar((char)(nb + 48));
 }
