@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/27 19:00:06 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/02 11:42:20 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/02 12:02:03 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,6 @@ void		vct_cat(t_vector *dest, t_vector *src);
 t_vector	*vct_cdup(t_vector *vct, char c);
 t_vector	*vct_dup(t_vector *vct);
 int			vct_chr(t_vector *vct, char c);
+int			vct_cpy(t_vector *dest, t_vector *src);
 
 #endif

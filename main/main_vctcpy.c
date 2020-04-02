@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_vctcat.c                                      :+:      :+:    :+:   */
+/*   main_vctcpy.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/01 16:57:57 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/02 12:04:48 by lfallet          ###   ########.fr       */
+/*   Created: 2020/04/02 12:01:09 by lfallet           #+#    #+#             */
+/*   Updated: 2020/04/02 12:05:26 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,10 @@ int	main(int ac, char **av)
 		vct_addstr(vct6, av[6]);
 		vct_addstr(vct7, av[7]);
 		vct_addstr(vct8, av[8]);
-		vct_cat(vct1, vct2);
-		vct_cat(vct3, vct4);
-		vct_cat(vct5, vct6);
-		vct_cat(vct7, vct8);
+		vct_cpy(vct1, vct2);
+		vct_cpy(vct3, vct4);
+		vct_cpy(vct5, vct6);
+		vct_cpy(vct7, vct8);
 		vct_printendl(vct1);
 		vct_printendl(vct3);
 		vct_printendl(vct5);
