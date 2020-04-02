@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_putstr.c                                      :+:      :+:    :+:   */
+/*   main_putnbr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/02 21:37:37 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/02 22:07:30 by lfallet          ###   ########.fr       */
+/*   Created: 2020/04/02 22:06:58 by lfallet           #+#    #+#             */
+/*   Updated: 2020/04/02 22:08:10 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-void	test(char *input)
+void	test(int input)
 {
-	ssize_t	ret;
-
-	ret = ft_putstr(input);
+	ft_putnbr(input);
 }
 
 int	main(int ac, char **av)
@@ -27,11 +25,9 @@ int	main(int ac, char **av)
 	i = 1;
 	while (i < ac)
 	{
-		test(av[i]);
+		test(ft_atoi(av[i]));
 		i++;
 	}
 	return (EXIT_SUCCESS);
 }
-
-
 

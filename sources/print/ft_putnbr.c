@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_putstr.c                                      :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/02 21:37:37 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/02 22:07:30 by lfallet          ###   ########.fr       */
+/*   Created: 2020/04/02 22:04:13 by lfallet           #+#    #+#             */
+/*   Updated: 2020/04/02 22:04:40 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+#include <unistd.h>
 
-void	test(char *input)
+void	ft_putchar(char c)
 {
-	ssize_t	ret;
-
-	ret = ft_putstr(input);
+	write(1, &c, 1);
 }
 
-int	main(int ac, char **av)
+void	ft_putnbr(int nb)
 {
-	int		i;
-	
-	i = 1;
-	while (i < ac)
+	if (nb < 0)
 	{
-		test(av[i]);
-		i++;
+		if (nb == -2147483648)
+		{
+			write(1, "-2147483648", 11);
+			return ;
+		}
+		nb = nb * (-1);
+		ft_putchar('-');
 	}
-	return (EXIT_SUCCESS);
+	if (nb >= 10)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+	else
+		ft_putchar(nb + 48);
 }
-
-
-
