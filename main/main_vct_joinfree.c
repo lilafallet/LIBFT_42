@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/02 16:52:02 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/02 16:53:48 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/02 19:43:47 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,8 @@ void	test(char *input1, char *input2)
 	vct2 = vct_new();
 	vct_addstr(vct1, input1);
 	vct_addstr(vct2, input2);
-	vct_test = vct_joinfree(vct1, vct2, vct1->len, vct2>len);
+	vct_test = vct_joinfree(&vct1, &vct2, FIRST | SECOND);
 	printf("vct test = %s\n", vct_getstr(vct_test)); /*debug*/
-	vct_del(&vct1);
-	vct_del(&vct2);
 	vct_del(&vct_test);
 }
 
