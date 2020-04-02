@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/02 15:34:48 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/02 15:39:20 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/02 19:08:28 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 char	vct_getfirstchar(t_vector *vct)
 {
-	return(vct->str[0]);
+	if (vct != NULL || vct->str == NULL)
+		return ('\0');
+	return (vct->str[0]);
 }

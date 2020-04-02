@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/30 13:54:38 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/30 14:05:40 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/02 19:04:08 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	vct_cut(t_vector *vct)
 		return (FAILURE);
 	if (vct->len == 0)
 		return (SUCCESS);
-	ft_memmove(vct->str, vct->str, vct->len - 1);
+	vct->str[vct->len - 1] = '\0';
 	vct->len--;
 	return (SUCCESS);
 }

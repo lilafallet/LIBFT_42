@@ -6,23 +6,23 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/29 17:35:50 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/29 17:35:53 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/02 18:45:57 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
 
-int		vct_resize(t_vector *vct, size_t len)
+int		vct_resize(t_vector *vct, size_t len_to_resize)
 {
-	size_t	new_len;
+	size_t	new_resize;
 	char	*str;
 
-	if (len < vct->resize)
-		new_len = vct->resize;
+	if (len_to_resize < vct->resize)
+		new_resize = vct->resize;
 	else
-		new_len = len + len % vct->resize + vct->resize;
-	vct->resize = new_len;
-	vct->size += new_len;
+		new_resize = len_to_resize - len_to_resize % vct->resize + vct->resize;
+	vct->resize = new_resize;
+	vct->size += new_resize;
 	str = vct->str;
 	vct->str = (char *)malloc(sizeof(char) * (vct->size));
 	if (vct->str != NULL)

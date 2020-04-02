@@ -6,12 +6,11 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/31 11:25:12 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/31 21:33:23 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/02 18:47:32 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
-#include <stdio.h> /*debug*/
 
 int	vct_apply(t_vector *vct, int flag)
 {

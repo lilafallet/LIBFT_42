@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/29 17:34:29 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/29 17:34:31 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/02 18:47:14 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int		vct_addstr(t_vector *vct, char *str)
 	if (vct != NULL && str != NULL)
 	{
 		len = ft_strlen(str);
-		if (len + vct->len >= vct->size)
-			if (vct_resize(vct, len + vct->len) == FAILURE)
+		if (len + 1 + vct->len >= vct->size)
+			if (vct_resize(vct, len + 1) == FAILURE)
 				return (FAILURE);
 		ft_memmove(vct->str + vct->len, str, len);
 		vct->len += len;

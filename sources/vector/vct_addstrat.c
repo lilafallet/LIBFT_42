@@ -6,12 +6,11 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/30 19:21:22 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/30 21:04:04 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/02 18:46:33 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
-#include <stdio.h>
 
 int	vct_addstrat(t_vector *vct, size_t index, char *str)
 {
@@ -22,10 +21,9 @@ int	vct_addstrat(t_vector *vct, size_t index, char *str)
 		return (FAILURE);
 	len_str = ft_strlen(str);
 	i = 0;
-	printf("vct->size = %zu\n", vct->size); /*debug*/
 	if (vct->len + len_str + 1 >= vct->size)
 	{
-		if (vct_resize(vct, len_str + vct->size) == FAILURE)
+		if (vct_resize(vct, len_str + 1) == FAILURE)
 			return (FAILURE);
 	}
 	ft_memmove(vct->str + index + len_str, vct->str + index, vct->len - index);
