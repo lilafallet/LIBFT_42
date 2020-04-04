@@ -6,7 +6,7 @@
 #    By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 15:19:15 by lfallet           #+#    #+#              #
-#    Updated: 2020/04/04 16:45:20 by lfallet          ###   ########.fr        #
+#    Updated: 2020/04/04 19:42:03 by lfallet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -147,6 +147,8 @@ SRCS += vct_equ.c
 SRCS += vct_getfirstchar.c
 SRCS += vct_join.c
 SRCS += vct_joinfree.c
+SRCS += vct_split_each.c
+SRCS += vct_chrstr.c
 
 SRCS += get_next_line.c
 SRCS += get_next_line_multifd.c

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_vct_joinfree.c                                :+:      :+:    :+:   */
+/*   main_vct_split_each.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/02 16:52:02 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/02 19:43:47 by lfallet          ###   ########.fr       */
+/*   Created: 2020/04/04 18:32:35 by lfallet           #+#    #+#             */
+/*   Updated: 2020/04/04 19:44:42 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,18 @@
 
 void	test(char *input1, char *input2)
 {
-	t_vector	*vct1;
-	t_vector	*vct2;
-	t_vector	*vct_test;
+	t_vector	*vct;
+	t_vector	*vct_return;
 
-	vct1 = vct_new();
-	vct2 = vct_new();
-	vct_addstr(vct1, input1);
-	vct_addstr(vct2, input2);
-	vct_test = vct_joinfree(&vct1, &vct2, FIRST | SECOND);
-	printf("vct test = %s\n", vct_getstr(vct_test)); /*debug*/
-	vct_del(&vct_test);
+	vct = vct_new();
+	vct_addstr(vct, input1);
+	while ((vct_return = vct_split_each(vct, input2, NO_SEPARATOR)) != NULL)
+	{
+		printf("vct_return = %s\n", vct_getstr(vct_return)); //
+		vct_del(&vct_return);
+	}
+	vct_del(&vct);
+	vct_del(&vct_return);
 }
 
 int	main(int ac, char **av)
@@ -33,13 +34,10 @@ int	main(int ac, char **av)
 	int		i;
 	
 	i = 1;
-	while (i < ac)
+	while (i + 1 < ac)
 	{
 		test(av[i], av[i + 1]);
 		i += 2;
 	}
 	return (EXIT_SUCCESS);
 }
-
-
-

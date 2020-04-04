@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_putnbr.c                                      :+:      :+:    :+:   */
+/*   vct_split_each.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/02 22:06:58 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/02 22:20:13 by lfallet          ###   ########.fr       */
+/*   Created: 2020/04/04 18:47:39 by lfallet           #+#    #+#             */
+/*   Updated: 2020/04/04 20:44:23 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "vector.h"
 #include <stdio.h>
 
-void	test(char *input1, char *input2)
+t_vector	*vct_split_each(t_vector *vct, char *str, int flag)
 {
-	char *new_str;
+	t_vector	*ret_vct;	
+	size_t		i;
 
-	new_str = ft_strcat(input1, input2);
-	printf("new_str = %s\n", new_str); /*debug*/
-}
-
-int	main(int ac, char **av)
-{
-	int		i;
-	
-	i = 1;
-	while (i < ac)
+	i = 0;
+	ret_vct = vct_new();
+	if (vct == NULL)
+		return (NULL);
+	while (i < vct->len)
 	{
-		test(av[i], av[i + 1]);
-		i += 2;
+		if (vct_chrstr(vct, i, str) == TRUE)
+			i++; //METTRE la chaine dans le vecteur
+		else
+			i++;
 	}
-	return (EXIT_SUCCESS);
+	vct_del(&ret_vct); //
+	return (NULL);
 }
-
