@@ -6,7 +6,7 @@
 #    By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 15:19:15 by lfallet           #+#    #+#              #
-#    Updated: 2020/04/04 13:30:43 by lfallet          ###   ########.fr        #
+#    Updated: 2020/04/04 16:21:31 by lfallet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -102,6 +102,7 @@ SRCS += ft_strncpy.c
 SRCS += ft_strcdup.c
 SRCS += ft_strcdup.c
 SRCS += ft_get_size_of_nb.c
+SRCS += ft_strequ.c
 
 SRCS += ft_lstadd_back.c
 SRCS += ft_lstadd_front.c
@@ -141,7 +142,7 @@ SRCS += vct_dup.c
 SRCS += vct_chr.c
 SRCS += vct_cpy.c
 SRCS += vct_strdup.c
-SRCS += vct_eq.c
+SRCS += vct_equ.c
 SRCS += vct_getfirstchar.c
 SRCS += vct_join.c
 SRCS += vct_joinfree.c

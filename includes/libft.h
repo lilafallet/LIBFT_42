@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:46:06 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/04 13:29:33 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/04 16:20:45 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ int					ft_abs(int n);
 char				*ft_strncpy(char *dest, const char *src, size_t n);
 char				*ft_strcdup(const char *s, char c);
 size_t				get_size_of_nb(char *s);
+int					ft_strequ(char *str1, char *str2);
 
 typedef struct		s_list
 {
