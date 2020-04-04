@@ -6,7 +6,7 @@
 #    By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 15:19:15 by lfallet           #+#    #+#              #
-#    Updated: 2020/04/02 22:16:30 by lfallet          ###   ########.fr        #
+#    Updated: 2020/04/04 12:55:56 by lfallet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -97,6 +97,8 @@ SRCS += ft_putstr.c
 SRCS += ft_putendl.c
 SRCS += ft_putnbr.c
 SRCS += ft_strcat.c
+SRCS += ft_abs.c
+SRCS += ft_strncpy.c
 
 SRCS += ft_lstadd_back.c
 SRCS += ft_lstadd_front.c
@@ -179,6 +181,7 @@ vpath %.c sources/PROJECT_PRINTF/parser/
 vpath %.c sources/string/
 vpath %.c sources/to_something/
 vpath %.c sources/vector/
+vpath %.c sources/number/
 
 OBJS = $(patsubst %.c, $(OBJS_DIR)%.o, $(SRCS))
 OBJS_DIR = ./objs/

@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:46:06 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/02 22:16:02 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/04 12:55:27 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ ssize_t				ft_putstr(char *str);
 ssize_t				ft_putendl(char *str);
 void				ft_putnbr(int nb);
 char				*ft_strcat(char *dest, char *src);
+int					ft_abs(int n);
+char				*ft_strncpy(char *dest, const char *src, size_t n);
 
 typedef struct		s_list
 {
