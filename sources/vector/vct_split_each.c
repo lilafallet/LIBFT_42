@@ -12,20 +12,6 @@
 
 #include "vector.h"
 #include <stdio.h>
-static int	initialisation_vct(t_vector *ret_vct, t_vector *vct, size_t end, size_t start) //ajouter fonction dans la lib vct_popcut_str
-{	
-	size_t	len;
-
-	len = end - start;
-	if (len == 0)
-		len = 1;
-	if (len + 1 >= ret_vct->size)
-		if (vct_resize(ret_vct, len + 1) == FAILURE)
-			return (FAILURE);
-	ft_memmove(ret_vct->str, vct->str + start, len);
-	ret_vct->len = len;
-	return (SUCCESS);
-}
 
 t_vector	*vct_split_each(t_vector *vct, char *str, int flag)
 {
@@ -62,7 +48,7 @@ t_vector	*vct_split_each(t_vector *vct, char *str, int flag)
 			other_char = i;
 			while (vct_chrstr(vct_base, other_char + 1, str) == TRUE)
 				other_char++;
-			ret = initialisation_vct(ret_vct, vct_base, i, start);
+			ret = vct_popcut(ret_vct, vct_base, i, start);
 			if (ret == FAILURE)
 				return (NULL);
 			if (i != other_char)
@@ -75,7 +61,7 @@ t_vector	*vct_split_each(t_vector *vct, char *str, int flag)
 	}
 	if (i == vct_base->len && (vct_chrstr(vct_base, i, str) == FALSE)) //faire une fonction last_is_false
 	{
-		ret = initialisation_vct(ret_vct, vct_base, i, start);
+		ret = vct_popcut(ret_vct, vct_base, i, start);
 		if (ret == FAILURE)
 			return (NULL);
 		i++;

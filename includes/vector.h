@@ -100,5 +100,7 @@ t_vector	*vct_join(t_vector *vct1, t_vector *vct2);
 t_vector	*vct_joinfree(t_vector **vct1, t_vector **vct2, int flag);
 t_vector	*vct_split_each(t_vector *vct, char *str, int flag);
 int			vct_chrstr(t_vector *vct, size_t index, char *search);
+int			vct_popcut(t_vector *ret_vct, t_vector *vct, size_t end,
+						size_t start);
 
 #endif

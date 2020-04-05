@@ -148,6 +148,7 @@ SRCS += vct_join.c
 SRCS += vct_joinfree.c
 SRCS += vct_split_each.c
 SRCS += vct_chrstr.c
+SRCS += vct_popcut.c
 
 SRCS += get_next_line.c
 SRCS += get_next_line_multifd.c
