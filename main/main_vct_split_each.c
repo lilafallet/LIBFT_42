@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/04 18:32:35 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/04 19:44:42 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/05 19:21:47 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ void	test(char *input1, char *input2)
 	vct_addstr(vct, input1);
 	while ((vct_return = vct_split_each(vct, input2, NO_SEPARATOR)) != NULL)
 	{
-		printf("vct_return = %s\n", vct_getstr(vct_return)); //
+		printf("vct_return = %s\n\n", vct_getstr(vct_return)); //
 		vct_del(&vct_return);
 	}
+	printf("vct_return NULL DIRECT = %s\n\n", vct_getstr(vct_return)); //
 	vct_del(&vct);
-	vct_del(&vct_return);
 }
 
 int	main(int ac, char **av)
