@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/27 19:00:06 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/06 14:28:03 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/06 19:17:36 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,6 @@ t_vector	*vct_join(t_vector *vct1, t_vector *vct2);
 t_vector	*vct_joinfree(t_vector **vct1, t_vector **vct2, int flag);
 t_vector	*vct_split_each(t_vector *vct, char *str, int flag);
 int			vct_chrstr(t_vector *vct, size_t index, char *search);
-int			vct_popcut(t_vector *ret_vct, t_vector *vct, size_t end,
-						size_t start);
+t_vector	*vct_popcut(t_vector *vct, size_t end, size_t start);
 
 #endif
