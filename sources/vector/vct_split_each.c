@@ -6,12 +6,39 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/04 18:47:39 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/05 21:11:29 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/06 15:36:12 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
 #include <stdio.h>
+
+static int first_are_true(t_vector *vct_base, size_t i, char *str)
+{
+	while (vct_chrstr(vct_base, i, str) == TRUE)
+		i++;
+	return ((int)(i));
+}
+
+static int	check_first_last(t_vector *vct_base, size_t *i, char *str)
+{
+	int	ret;
+
+	ret = TRUE;
+	if (vct_base == NULL)
+		ret = FAILURE;
+	else if (vct_chrstr(vct_base, *i, str) == TRUE && *i == 0)
+	{
+		ret = first_are_true(vct_base, *i, str);
+		*i = (size_t)ret;
+		if ((size_t)ret == vct_base->len)
+			ret = FALSE;
+	}
+	else if (vct_chrstr(vct_base, vct_base->len - 1, str) == TRUE
+				&& *i == vct_base->len)
+		ret = FALSE;
+	return (ret);
+}
 
 t_vector	*vct_split_each(t_vector *vct, char *str, int flag)
 {
@@ -22,23 +49,14 @@ t_vector	*vct_split_each(t_vector *vct, char *str, int flag)
 	size_t				other_char;
 	int					ret;
 
-	if (vct_base == NULL || (vct_base != vct && vct != NULL)) //faire une fonction check_vct
+	if (vct_base == NULL || (vct_base != vct && vct != NULL))
 	{
 		i = 0;
 		vct_base = vct;
 	}
-	if (vct_base == NULL)
-		return (NULL); //check_vct
-	if (vct_chrstr(vct_base, i, str) == TRUE && i == 0) //faire une fonction first_are_true
-	{
-		while (vct_chrstr(vct_base, i, str) == TRUE)
-			i++;
-		if (i == vct_base->len)
-			return (NULL);
-	} //first_are_truc
-	else if (vct_chrstr(vct_base, vct_base->len - 1, str) == TRUE
-				&& i == vct_base->len) //faire une fonction last_is_true
-		return (NULL); //last_is_truc
+	ret = check_first_last(vct_base, &i, str);
+	if (ret == FALSE || ret == FAILURE)
+		return (NULL);
 	start = i;
 	ret_vct = vct_new();
 	while (i < vct_base->len)
