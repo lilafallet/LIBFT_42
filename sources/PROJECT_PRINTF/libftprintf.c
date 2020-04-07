@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 15:12:50 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/22 17:31:10 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/07 18:01:38 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int			parser(char *format, va_list *argptr, t_st_machine *machine)
 {
 	static	t_fun	function[3] = {letter_function, flag_function,
 										conversion_function};
-	int					ret;
+	int				ret;
 
 	ret = SUCCESS;
 	if (format != NULL)

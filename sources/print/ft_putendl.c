@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/02 21:51:40 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/02 21:53:12 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/07 18:06:00 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,3 @@ ssize_t	ft_putendl(char *str)
 		ret += write(STDOUT_FILENO, "\n", 1);
 	return (ret);
 }
-

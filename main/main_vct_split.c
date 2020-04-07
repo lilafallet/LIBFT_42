@@ -6,14 +6,14 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/07 16:08:14 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/07 16:12:23 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/07 18:13:35 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
 #include <stdio.h>
 
-void	test(char *input1, char *input2, int flag)
+static void	test(char *input1, char *input2, int flag)
 {
 	t_vector	*vct;
 	t_vector	*vct_return;
@@ -29,10 +29,10 @@ void	test(char *input1, char *input2, int flag)
 	vct_del(&vct);
 }
 
-int	main(int ac, char **av)
+int			main(int ac, char **av)
 {
 	int		i;
-	
+
 	i = 1;
 	while (i + 2 < ac)
 	{

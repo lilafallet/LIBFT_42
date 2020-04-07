@@ -6,13 +6,13 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/29 17:35:08 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/29 17:35:11 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/07 17:48:17 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
 
-t_vector *vct_new(void)
+t_vector	*vct_new(void)
 {
 	t_vector	*vct;
 
@@ -22,7 +22,7 @@ t_vector *vct_new(void)
 		vct->size = DEFAULT_VECTOR_SIZE;
 		vct->resize = DEFAULT_VECTOR_RESIZE;
 		vct->len = 0;
-		vct->str = (char *)malloc(sizeof(char) * vct->size);	
+		vct->str = (char *)malloc(sizeof(char) * vct->size);
 		if (vct->str == NULL)
 		{
 			free(vct);

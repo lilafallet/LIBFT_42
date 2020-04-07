@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/01 16:55:24 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/02 19:30:20 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/07 17:55:54 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 t_vector	*vct_cdup(t_vector *vct, char c)
 {
-	t_vector *new_vct;
-	size_t	clen;
+	t_vector	*new_vct;
+	size_t		clen;
 
 	if (vct == NULL || vct->str == NULL)
 		return (NULL);

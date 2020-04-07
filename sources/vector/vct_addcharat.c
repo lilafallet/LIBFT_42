@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/31 10:54:59 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/02 18:45:54 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/07 17:30:10 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,3 @@ int	vct_addcharat(t_vector *vct, size_t index, char c)
 	vct->len++;
 	return (SUCCESS);
 }
-

@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/02 22:04:13 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/02 22:18:47 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/07 18:05:08 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_putnbr(int nb)
+void		ft_putnbr(int nb)
 {
 	if (nb < 0)
 	{

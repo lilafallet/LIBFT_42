@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/02 22:13:55 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/02 22:15:41 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/07 17:24:02 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ char	*ft_strcat(char *dest, char *src)
 		i++;
 	}
 	dest[i] = '\0';
-	return (dest);	
+	return (dest);
 }

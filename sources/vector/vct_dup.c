@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/02 11:17:16 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/02 19:28:58 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/07 17:52:56 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,3 @@ t_vector	*vct_dup(t_vector *vct)
 	new_vct->len = vct->len;
 	return (new_vct);
 }
-

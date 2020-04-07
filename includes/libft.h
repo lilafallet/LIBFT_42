@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:46:06 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/04 16:45:01 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/07 18:35:03 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <stdlib.h>
 # include "get_next_line.h"
 # include "vector.h"
+# include <stdarg.h>
+# include <stdint.h>
 
 # define TRUE	1
 # define FALSE	0
@@ -149,9 +151,6 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 # define FREE_S1 1
 # define FREE_S2 2
 
-# include <stdarg.h>
-# include <stdint.h>
-
 enum				e_st
 {
 	LETTER,
@@ -160,7 +159,7 @@ enum				e_st
 	DO_CONV
 };
 
-typedef	struct	s_option
+typedef	struct		s_option
 {
 	size_t			width;
 	size_t			precision;
@@ -171,9 +170,9 @@ typedef	struct	s_option
 	int				post_negt;
 	size_t			len_dest;
 	size_t			len_src;
-}				t_option;
+}					t_option;
 
-typedef struct	s_st_machine
+typedef struct		s_st_machine
 {
 	char			buffer[BUFFER_SIZE];
 	char			*out;
@@ -183,84 +182,88 @@ typedef struct	s_st_machine
 	enum e_st		state;
 	char			char_error;
 	char			pad[3];
-}				t_st_machine;
+}					t_st_machine;
 
-typedef	int		(*t_fun)(char *, t_st_machine *, va_list *);
+typedef	int			(*t_fun)(char *, t_st_machine *, va_list *);
 
-int				ft_printf(const char *format, ...);
-int				ft_dprintf(int fd, const char *format, ...);
-int				ft_asprintf(char **ptr, const char *format, ...);
-
-int				is_conversion(const char c);
-void			ft_bzero(void *s, size_t n);
-int				is_flag(const char *s);
-void			fill_buffer(t_st_machine *machine, char c);
-void			memjoin_free_option(char **dest, char *src, t_option *option);
-void			memjoin_free(char **dest, char *src, size_t len_dest,
+int					ft_printf(const char *format, ...);
+int					ft_dprintf(int fd, const char *format, ...);
+int					ft_asprintf(char **ptr, const char *format, ...);
+int					is_conversion(const char c);
+void				ft_bzero(void *s, size_t n);
+int					is_flag(const char *s);
+void				fill_buffer(t_st_machine *machine, char c);
+void				memjoin_free_option(char **dest, char *src,
+												t_option *option);
+void				memjoin_free(char **dest, char *src, size_t len_dest,
 								size_t len_src);
-int				letter_function(char *str, t_st_machine *machine,
+int					letter_function(char *str, t_st_machine *machine,
 									va_list *argptr);
-int				flag_function(char *str, t_st_machine *machine,
+int					flag_function(char *str, t_st_machine *machine,
 									va_list *argptr);
-int				conversion_function(char *str, t_st_machine *machine,
+int					conversion_function(char *str, t_st_machine *machine,
 									va_list *argptr);
-char			*xminxmaj_conv(unsigned long x, t_option *option);
-char			*n_conv(long *ptr, t_option *option, size_t len);
-char			*c_conv(int c, t_option *option);
-char			*s_conv(char *str, t_option *option);
-char			*p_conv(unsigned long p, t_option *option);
-char			*u_conv(unsigned long u, t_option *option);
-char			*di_conv(long d, t_option *option);
-char			*puxxmaj_conv(unsigned long diux, t_option *option);
-size_t			len_width(size_t width);
-char			*hub_strjoin_width_precision(char *str, t_option *option,
-												size_t len_str);
-void			preset_flag(t_st_machine *machine);
-int				it_is_csp(int flag);
-char			*process_conversion(va_list *argptr, t_st_machine *machine);
-void			initialisation(t_st_machine *machine);
-char			*ft_ultoa_base(unsigned long nb, unsigned long base);
-char			*ft_ltoa_base(long nb, long base);
-char			*ft_ltoa_base_post(long nb, long base);
-char			*add_minus(char *new_str);
-char			*strjoin_xminxmaj_conversion(char *new_str, t_option *origin,
-												t_option *option, char *number);
-char			*strjoin_p_conversion(char *new_str, t_option *origin,
+char				*xminxmaj_conv(unsigned long x, t_option *option);
+char				*n_conv(long *ptr, t_option *option, size_t len);
+char				*c_conv(int c, t_option *option);
+char				*s_conv(char *str, t_option *option);
+char				*p_conv(unsigned long p, t_option *option);
+char				*u_conv(unsigned long u, t_option *option);
+char				*di_conv(long d, t_option *option);
+char				*puxxmaj_conv(unsigned long diux, t_option *option);
+size_t				len_width(size_t width);
+char				*hub_strjoin_width_precision(char *str,
+														t_option *option,
+														size_t len_str);
+void				preset_flag(t_st_machine *machine);
+int					it_is_csp(int flag);
+char				*process_conversion(va_list *argptr,
+												t_st_machine *machine);
+void				initialisation(t_st_machine *machine);
+char				*ft_ultoa_base(unsigned long nb, unsigned long base);
+char				*ft_ltoa_base(long nb, long base);
+char				*ft_ltoa_base_post(long nb, long base);
+char				*add_minus(char *new_str);
+char				*strjoin_xminxmaj_conversion(char *new_str,
+														t_option *origin,
+														t_option *option,
+														char *number);
+char				*strjoin_p_conversion(char *new_str, t_option *origin,
 										t_option *option, char *number);
-unsigned long	atoul(const char *str);
-void			get_p_width(t_option *option, size_t len);
-char			*p_is_zero(t_option *option, t_option *cpy_option);
-char			*d_inferior_zero(long d, t_option *option);
-char			*d_superior_zero(t_option *option, long d);
-void			get_width_x(t_option *option, size_t len);
-void			get_precision_x(t_option *cpy_option, t_option *option,
+unsigned long		atoul(const char *str);
+void				get_p_width(t_option *option, size_t len);
+char				*p_is_zero(t_option *option, t_option *cpy_option);
+char				*d_inferior_zero(long d, t_option *option);
+char				*d_superior_zero(t_option *option, long d);
+void				get_width_x(t_option *option, size_t len);
+void				get_precision_x(t_option *cpy_option, t_option *option,
 									size_t len);
-char			*x_is_zero(t_option *option, t_option *cpy_option);
-int				string_str_zero(t_option *option, t_option *cpy_option,
+char				*x_is_zero(t_option *option, t_option *cpy_option);
+int					string_str_zero(t_option *option, t_option *cpy_option,
 									unsigned int x, size_t len);
-size_t			get_size_of_nb(char *s);
-int				is_number(char *str);
-size_t			initialisation_x_conversion(t_option *option,
+size_t				get_size_of_nb(char *s);
+int					is_number(char *str);
+size_t				initialisation_x_conversion(t_option *option,
 												t_option *cpy_option,
 												char **number, unsigned long x);
-size_t			initialisation_p_conversion(t_option *option,
+size_t				initialisation_p_conversion(t_option *option,
 												t_option *cpy_option,
 												char **number, unsigned long p);
-void			initialisation_wipre_p_conversion(t_option *option,
+void				initialisation_wipre_p_conversion(t_option *option,
 													t_option *cpy_option,
 													size_t len,
 													unsigned long p);
-int				parser(char *format, va_list *argptr, t_st_machine *machine);
+int					parser(char *format, va_list *argptr,
+								t_st_machine *machine);
 
 /*
 **** OTHER
 */
 
-unsigned long	ft_atoul(const char *str);
-char			*ft_ltoa_base(long nb, long base);
-char			*ft_ultoa_base(unsigned long nb, unsigned long base);
-void			ft_free_tab(size_t size, char **str);
-size_t			ft_is_len_zero(char *str);
-
+unsigned long		ft_atoul(const char *str);
+char				*ft_ltoa_base(long nb, long base);
+char				*ft_ultoa_base(unsigned long nb, unsigned long base);
+void				ft_free_tab(size_t size, char **str);
+size_t				ft_is_len_zero(char *str);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/29 17:35:50 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/02 18:45:57 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/07 17:49:27 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		vct_resize(t_vector *vct, size_t len_to_resize)
 	if (vct->str != NULL)
 	{
 		ft_bzero(vct->str, vct->size);
-		ft_memmove(vct->str, str, vct->len);		
+		ft_memmove(vct->str, str, vct->len);
 	}
 	free(str);
 	return (vct->str == NULL ? FAILURE : SUCCESS);

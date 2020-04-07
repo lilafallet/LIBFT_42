@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/29 17:35:19 by lfallet           #+#    #+#             */
-/*   Updated: 2020/03/29 17:35:21 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/07 17:30:33 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,5 @@ size_t	vct_nlen(t_vector *vct, size_t n)
 		return (0);
 	if (n > vct->len)
 		n = vct->len;
-	return (n);	
+	return (n);
 }

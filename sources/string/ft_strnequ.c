@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/04 16:41:39 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/07 15:35:44 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/07 17:22:54 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,3 @@ int	ft_strnequ(char *str1, char *str2, size_t n)
 	}
 	return (TRUE);
 }
-

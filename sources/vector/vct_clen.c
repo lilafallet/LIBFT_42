@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/29 17:40:29 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/02 18:59:05 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/07 17:26:31 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ size_t	vct_clen(t_vector *vct, char c)
 		return (0);
 	while (i < vct->len && vct->str[i] != c)
 		i++;
-	return (i);	
+	return (i);
 }
