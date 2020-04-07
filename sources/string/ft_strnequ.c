@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/04 16:41:39 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/04 16:49:13 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/07 15:35:44 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int	ft_strnequ(char *str1, char *str2, size_t n)
 		return (TRUE);
 	while (i < n && (str1[i] != '\0' || str2[i] != '\0'))
 	{
-		printf("i = %zu\n", i); //
 		if (str1[i] != str2[i])
 			return (FALSE);
 		i++;

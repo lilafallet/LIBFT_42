@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/27 19:00:06 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/06 19:17:36 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/07 16:06:41 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,10 @@
 # define FIRST	1
 # define SECOND	2
 
-# define YES_SEPARATOR 0
-# define NO_SEPARATOR 1
+# define NO_SEP		0x00
+# define EACH_SEP 	0x01
+# define ALL_SEP 	0x02
+# define WORD	 	0x04
 
 enum	e_apply_tois
 {
@@ -98,7 +100,7 @@ int			vct_equ(t_vector *vct1, t_vector *vct2);
 char		vct_getfirstchar(t_vector *vct);
 t_vector	*vct_join(t_vector *vct1, t_vector *vct2);
 t_vector	*vct_joinfree(t_vector **vct1, t_vector **vct2, int flag);
-t_vector	*vct_split_each(t_vector *vct, char *str, int flag);
+t_vector	*vct_split(t_vector *vct, char *str, const unsigned int flag);
 int			vct_chrstr(t_vector *vct, size_t index, char *search);
 t_vector	*vct_popcut(t_vector *vct, size_t end, size_t start);
 

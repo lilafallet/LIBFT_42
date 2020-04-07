@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_vct_split_each.c                              :+:      :+:    :+:   */
+/*   main_vct_split.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/04 18:32:35 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/07 10:49:12 by lfallet          ###   ########.fr       */
+/*   Created: 2020/04/07 16:08:14 by lfallet           #+#    #+#             */
+/*   Updated: 2020/04/07 16:12:23 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
 #include <stdio.h>
 
-void	test(char *input1, char *input2)
+void	test(char *input1, char *input2, int flag)
 {
 	t_vector	*vct;
 	t_vector	*vct_return;
 
 	vct = vct_new();
 	vct_addstr(vct, input1);
-	while ((vct_return = vct_split_each(vct, input2, NO_SEPARATOR)) != NULL)
+	while ((vct_return = vct_split(vct, input2, flag)) != NULL)
 	{
 		printf("vct_return = %s\n\n", vct_getstr(vct_return)); //
 		vct_del(&vct_return);
@@ -34,10 +34,10 @@ int	main(int ac, char **av)
 	int		i;
 	
 	i = 1;
-	while (i + 1 < ac)
+	while (i + 2 < ac)
 	{
-		test(av[i], av[i + 1]);
-		i += 2;
+		test(av[i], av[i + 1], ft_atoi(av[i + 2]));
+		i += 3;
 	}
 	return (EXIT_SUCCESS);
 }
