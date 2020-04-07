@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/07 20:06:18 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/08 00:01:13 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/08 00:07:08 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 static int	is_new_line(t_vector *rest, t_vector *vct)
 {
 	t_vector	*tmp;
-	
+
 	if (vct_chr(rest, '\n') != FAILURE)
 	{
 		tmp = vct_splitchr(rest, '\n');
@@ -27,12 +27,12 @@ static int	is_new_line(t_vector *rest, t_vector *vct)
 	return (FALSE);
 }
 
-ssize_t	vct_readline(t_vector *vct, const int fd)
+ssize_t		vct_readline(t_vector *vct, const int fd)
 {
 	ssize_t			ret;
 	static t_vector	*rest = NULL;
 	char			buff[BUFFER_SIZE];
-	
+
 	if (vct == NULL || fd < 0)
 		return (FAILURE);
 	if (rest == NULL)

@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/07 19:05:29 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/07 19:48:57 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/08 00:05:42 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_vector	*vct_splitchr(t_vector *vct, char c)
 {
-	t_vector 	*new_vct;
+	t_vector	*new_vct;
 
 	new_vct = NULL;
 	if (vct != NULL)
