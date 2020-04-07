@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/27 19:00:06 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/07 18:40:07 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/07 21:07:56 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,10 @@
 
 # ifndef FAILURE
 #  define FAILURE -1
+# endif
+
+# ifndef BUFF_SIZE
+#  define BUFF_SIZE 5
 # endif
 
 # define DEFAULT_VECTOR_SIZE		64
@@ -103,5 +107,7 @@ t_vector		*vct_joinfree(t_vector **vct1, t_vector **vct2, int flag);
 t_vector		*vct_split(t_vector *vct, char *str, const unsigned int flag);
 int				vct_chrstr(t_vector *vct, size_t index, char *search);
 t_vector		*vct_popcut(t_vector *vct, size_t end, size_t start);
+t_vector		*vct_splitchr(t_vector *vct, char c);
+ssize_t			vct_readline(t_vector *vct, const int fd);
 
 #endif
