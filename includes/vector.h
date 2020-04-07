@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/27 19:00:06 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/07 21:07:56 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/08 00:01:40 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,9 @@
 # define EACH_SEP 	0x01
 # define ALL_SEP 	0x02
 # define WORD	 	0x04
+
+# define IS_EOF		0
+# define IS_LINE	1
 
 enum			e_apply_tois
 {
@@ -109,5 +112,6 @@ int				vct_chrstr(t_vector *vct, size_t index, char *search);
 t_vector		*vct_popcut(t_vector *vct, size_t end, size_t start);
 t_vector		*vct_splitchr(t_vector *vct, char c);
 ssize_t			vct_readline(t_vector *vct, const int fd);
+int				vct_addmem(t_vector *vct, void *mem, size_t len);
 
 #endif

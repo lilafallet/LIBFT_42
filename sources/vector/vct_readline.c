@@ -6,25 +6,50 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/07 20:06:18 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/07 22:02:11 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/08 00:01:13 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
 #include <unistd.h>
 
+static int	is_new_line(t_vector *rest, t_vector *vct)
+{
+	t_vector	*tmp;
+	
+	if (vct_chr(rest, '\n') != FAILURE)
+	{
+		tmp = vct_splitchr(rest, '\n');
+		vct_cat(vct, tmp);
+		vct_del(&tmp);
+		return (TRUE);
+	}
+	return (FALSE);
+}
+
 ssize_t	vct_readline(t_vector *vct, const int fd)
 {
-	ssize_t	ret;
-	int		ret_vct;
-	char	buff[BUFF_SIZE + 1]; //recupere la chaine de caractere lue
-								//enlever le +1
-
-	while ((ret = read(fd, buff, BUFF_SIZE)) > 0) //tant que ret est sup a 0 = fin de fichier         // -1 si erreur // 
+	ssize_t			ret;
+	static t_vector	*rest = NULL;
+	char			buff[BUFFER_SIZE];
+	
+	if (vct == NULL || fd < 0)
+		return (FAILURE);
+	if (rest == NULL)
+		rest = vct_new();
+	ft_bzero(vct->str, vct->size);
+	vct->len = 0;
+	if (is_new_line(rest, vct) == TRUE)
+		return (IS_LINE);
+	while ((ret = read(fd, buff, BUFFER_SIZE)) > 0)
 	{
-		ft_printf("ret = %d\n", ret); //
-		buff[BUFF_SIZE] = '\0'; //a enlever apres avoir teste
-		ft_printf("buff = %s\n\n", buff); //
+		if (vct_addmem(rest, buff, (size_t)ret) == FAILURE)
+			return (FAILURE);
+		if (is_new_line(rest, vct) == TRUE)
+			return (IS_LINE);
 	}
-	return (ret);
+	if (ret != FAILURE && rest->len != 0)
+		vct_cat(vct, rest);
+	vct_del(&rest);
+	return (IS_EOF);
 }
