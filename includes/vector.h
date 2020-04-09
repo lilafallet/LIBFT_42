@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/27 19:00:06 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/09 20:37:46 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/09 20:50:22 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,8 @@ enum			e_apply_tois
 	IS_ALPHA,
 	IS_ASCII,
 	IS_DIGIT,
-	IS_WHITESPACE,
 	IS_PRINT,
+	IS_WHITESPACE,
 	TO_ATOI
 };
 

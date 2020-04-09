@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/31 11:25:12 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/09 20:28:24 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/09 21:26:54 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int	vct_apply(t_vector *vct, int flag)
 	static t_ic_function function_tois[NB_TOIS] = {ft_tolower, ft_toupper,
 													ft_isalnum, ft_isalpha,
 													ft_isascii, ft_isdigit,
-													ft_iswhitespace,
-													ft_isprint};
+													ft_isprint,
+													ft_iswhitespace};
 
 	if (vct == NULL)
 		return (FAILURE);
