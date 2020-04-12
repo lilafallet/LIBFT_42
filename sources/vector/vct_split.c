@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/07 16:07:38 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/12 14:03:46 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/12 16:39:35 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,10 +84,7 @@ t_vector		*vct_split(t_vector *vct, char *str, const unsigned int flag)
 		else if (i < vct_base->len)
 			out = process(&i, vct_base, str, flag);
 		else
-		{
-			i = 0;
 			vct_base = NULL;
-		}
 	}
 	return (out);
 }

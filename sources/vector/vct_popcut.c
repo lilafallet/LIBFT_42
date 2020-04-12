@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/06 16:40:12 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/12 14:03:46 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/12 16:38:24 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ t_vector	*vct_popcut(t_vector *vct, size_t end, size_t start)
 	t_vector	*ret_vct;
 	size_t		len;
 
-	len = end - start;
+	if (start > end)
+		len = 0;
+	else
+		len = end - start;
 	ret_vct = vct_new();
 	if (len + 1 >= ret_vct->size)
 		if (vct_resize(ret_vct, len + 1) == FAILURE)
