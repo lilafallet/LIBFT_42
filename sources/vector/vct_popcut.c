@@ -6,12 +6,12 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/06 16:40:12 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/07 15:55:08 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/12 14:03:46 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
-#include <stdio.h>
+#include <stdio.h> //
 
 t_vector	*vct_popcut(t_vector *vct, size_t end, size_t start)
 {

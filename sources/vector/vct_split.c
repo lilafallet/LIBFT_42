@@ -6,11 +6,12 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/07 16:07:38 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/07 17:50:29 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/12 14:03:46 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
+#include <stdio.h> //
 
 static t_vector	*process(size_t *i, t_vector *vct_base, char *str,
 						const unsigned int flag)
@@ -69,7 +70,7 @@ t_vector		*vct_split(t_vector *vct, char *str, const unsigned int flag)
 	size_t				start_flag;
 	t_vector			*out;
 
-	start_flag = i;
+	start_flag = i;	
 	if (vct_base == NULL || (vct_base != vct && vct != NULL))
 	{
 		i = 0;
@@ -83,7 +84,10 @@ t_vector		*vct_split(t_vector *vct, char *str, const unsigned int flag)
 		else if (i < vct_base->len)
 			out = process(&i, vct_base, str, flag);
 		else
+		{
+			i = 0;
 			vct_base = NULL;
+		}
 	}
 	return (out);
 }
