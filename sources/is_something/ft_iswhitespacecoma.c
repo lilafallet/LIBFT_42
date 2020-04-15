@@ -1,35 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vct_apply.c                                        :+:      :+:    :+:   */
+/*   ft_isspacetabcoma.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/31 11:25:12 by lfallet           #+#    #+#             */
+/*   Created: 2020/04/15 15:36:01 by lfallet           #+#    #+#             */
 /*   Updated: 2020/04/15 15:38:44 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vector.h"
+#include "libft.h"
 
-int	vct_apply(t_vector *vct, int flag)
+int	ft_iswhitespacecoma(int c)
 {
-	static t_ic_function function_tois[NB_TOIS] = {ft_tolower, ft_toupper,
-													ft_isalnum, ft_isalpha,
-													ft_isascii, ft_isdigit,
-													ft_isprint,
-													ft_iswhitespace,
-													ft_iswhitespacecoma,
-													ft_iswhitespacedigit};
-
-	if (vct == NULL)
-		return (FAILURE);
-	if (flag == TO_ATOI)
-		return (ft_atoi(vct->str));
-	else if (flag < 2)
-	{
-		ft_striter(vct->str, function_tois[flag]);
-		return (TRUE);
-	}
-	return (ft_strcheck(vct->str, function_tois[flag]));
+	return (ft_iswhitespace(c) || c == ',');
 }
