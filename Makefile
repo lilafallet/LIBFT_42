@@ -6,7 +6,7 @@
 #    By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 15:19:15 by lfallet           #+#    #+#              #
-#    Updated: 2020/04/16 14:31:41 by lfallet          ###   ########.fr        #
+#    Updated: 2020/04/16 18:44:17 by lfallet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -107,6 +107,7 @@ SRCS += ft_iswhitespace.c
 SRCS += ft_iswhitespacedigit.c
 SRCS += ft_iswhitespacecomma.c
 SRCS += ft_iscomma.c
+SRCS += ft_bubblesort_minindex.c
 
 SRCS += ft_lstadd_back.c
 SRCS += ft_lstadd_front.c
@@ -197,6 +198,7 @@ vpath %.c sources/string/
 vpath %.c sources/to_something/
 vpath %.c sources/vector/
 vpath %.c sources/number/
+vpath %.c sources/sort/
 
 OBJS = $(patsubst %.c, $(OBJS_DIR)%.o, $(SRCS))
 OBJS_DIR = ./objs/
