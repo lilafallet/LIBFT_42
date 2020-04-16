@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/31 11:25:12 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/15 15:38:44 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/16 14:22:51 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ int	vct_apply(t_vector *vct, int flag)
 													ft_isascii, ft_isdigit,
 													ft_isprint,
 													ft_iswhitespace,
-													ft_iswhitespacecoma,
-													ft_iswhitespacedigit};
+													ft_iswhitespacecomma,
+													ft_iswhitespacedigit,
+													ft_iscomma};
 
 	if (vct == NULL)
 		return (FAILURE);

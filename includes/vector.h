@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/27 19:00:06 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/15 18:01:47 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/16 14:22:51 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@
 # define DEFAULT_VECTOR_RESIZE		16
 
 # define NB_CONVERSION 2
-# define NB_TOIS 10
+# define NB_TOIS 11
 
 # define NONE	0
 # define FIRST	1
@@ -63,8 +63,9 @@ enum			e_apply_tois
 	IS_DIGIT,
 	IS_PRINT,
 	IS_WHITESPACE,
-	IS_WHITESPACECOMA,
+	IS_WHITESPACECOMMA,
 	IS_WHITESPACEDIGIT,
+	IS_COMMA,
 	TO_ATOI
 };
 

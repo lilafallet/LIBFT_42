@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspacetabcoma.c                                :+:      :+:    :+:   */
+/*   ft_iscomma.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/15 15:36:01 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/15 15:38:44 by lfallet          ###   ########.fr       */
+/*   Created: 2020/04/16 14:27:41 by lfallet           #+#    #+#             */
+/*   Updated: 2020/04/16 14:28:42 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_iswhitespacecoma(int c)
+int	ft_iscomma(int c)
 {
-	return (ft_iswhitespace(c) || c == ',');
+	return (c == ',');
 }
