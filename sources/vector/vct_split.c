@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/07 16:07:38 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/13 20:50:37 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/17 18:09:11 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,7 @@ t_vector		*vct_split(t_vector *vct, char *str, const unsigned int flag)
 		else
 			vct_base = NULL;
 	}
+	if (vct_base == NULL)
+		i = 0;
 	return (out);
 }
