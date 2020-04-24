@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/16 18:42:55 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/16 20:00:11 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/24 21:33:55 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ size_t	ft_bubblesort_minindex(size_t *tab, size_t size)
 {
 	size_t	i;
 	size_t	index;
-	
+
 	i = 0;
 	index = 0;
 	while (i < size)
