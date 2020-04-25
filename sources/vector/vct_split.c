@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/07 16:07:38 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/17 18:09:11 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/25 17:29:54 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,10 +70,12 @@ t_vector		*vct_split(t_vector *vct, char *str, const unsigned int flag)
 	t_vector			*out;
 
 	start_flag = i;
-	if (vct_base == NULL || (vct_base != vct && vct != NULL))
+	if (flag == INIT || vct_base == NULL || (vct_base != vct && vct != NULL))
 	{
 		i = 0;
 		vct_base = vct;
+		if (vct_base == NULL)
+			return (NULL);
 	}
 	out = skip_sep(flag, vct_base, str, &i);
 	if (out == NULL)

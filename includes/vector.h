@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/27 19:00:06 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/16 21:02:31 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/04/25 17:30:17 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@
 # define EACH_SEP 	0x01
 # define ALL_SEP 	0x02
 # define WORD	 	0x04
+# define INIT	 	0x08
 
 # define IS_EOF		0
 # define IS_LINE	1
