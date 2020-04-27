@@ -15,12 +15,8 @@
 
 int	ft_strnequ(char *str1, char *str2, size_t n)
 {
-	size_t	len_str1;
-	size_t	len_str2;
 	size_t	i;
 
-	len_str1 = ft_strlen(str1);
-	len_str2 = ft_strlen(str2);
 	i = 0;
 	if (str1 == NULL || str2 == NULL)
 		return (FALSE);

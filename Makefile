@@ -40,7 +40,7 @@ else
 	CFLAGS += -Werror
 endif
 
-CC = clang
+CC = gcc
 
 INCLUDES = includes/
 
