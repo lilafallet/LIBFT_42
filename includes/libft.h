@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:46:06 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/16 19:56:30 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/06/06 14:04:08 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ int					ft_iswhitespacecomma(int c);
 int					ft_iswhitespacedigit(int c);
 int					ft_iscomma(int c);
 size_t				ft_bubblesort_minindex(size_t *tab, size_t size);
+double				ft_lfpow(double nb, int pow);
 
 typedef struct		s_list
 {
