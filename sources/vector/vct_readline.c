@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/07 20:06:18 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/08 00:07:08 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/06/22 19:23:47 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,11 @@ ssize_t		vct_readline(t_vector *vct, const int fd)
 	char			buff[BUFFER_SIZE];
 
 	if (vct == NULL || fd < 0)
-		return (FAILURE);
-	if (rest == NULL)
-		rest = vct_new();
+	{
+		vct_del(&rest);
+		return (fd == CLEANUP ? IS_EOF : FAILURE);
+	}
+	rest = rest == NULL ? vct_new() : rest;
 	ft_bzero(vct->str, vct->size);
 	vct->len = 0;
 	if (is_new_line(rest, vct) == TRUE)

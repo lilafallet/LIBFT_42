@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/27 19:00:06 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/25 17:30:17 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/06/22 19:24:31 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@
 #  define BUFF_SIZE 5
 # endif
 
+# define CLEANUP					-42
 # define DEFAULT_VECTOR_SIZE		64
 # define DEFAULT_VECTOR_RESIZE		16
 
