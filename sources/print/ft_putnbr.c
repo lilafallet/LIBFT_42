@@ -6,35 +6,14 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/02 22:04:13 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/07 18:05:08 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/06/23 18:21:56 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <unistd.h>
 
-static void	ft_putchar(char c)
+ssize_t		ft_putnbr(int nb)
 {
-	write(1, &c, 1);
-}
-
-void		ft_putnbr(int nb)
-{
-	if (nb < 0)
-	{
-		if (nb == -2147483648)
-		{
-			write(1, "-2147483648", 11);
-			return ;
-		}
-		nb = nb * (-1);
-		ft_putchar('-');
-	}
-	if (nb >= 10)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-	else
-		ft_putchar((char)(nb + 48));
+	return (ft_putnbr_fd(nb, STDOUT_FILENO));
 }

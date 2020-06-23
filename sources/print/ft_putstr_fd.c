@@ -6,15 +6,16 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:38:34 by lfallet           #+#    #+#             */
-/*   Updated: 2019/11/11 15:38:35 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/06/23 18:23:59 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+ssize_t	ft_putstr_fd(char *s, int fd)
 {
 	if (s != NULL)
-		write(fd, s, ft_strlen(s));
+		return (write(fd, s, ft_strlen(s)));
+	return (FAILURE);
 }

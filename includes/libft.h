@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:46:06 by lfallet           #+#    #+#             */
-/*   Updated: 2020/06/13 20:30:41 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/06/23 18:24:50 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,13 +62,13 @@ char				*ft_itoa(int n);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				*ft_striter(char *s, int (*f)(int));
 int					ft_strcheck(char *s, int (*f)(int));
-void				ft_putchar_fd(char c, int fd);
-void				ft_putstr_fd(char *s, int fd);
-void				ft_putendl_fd(char *s, int fd);
-void				ft_putnbr_fd(int n, int fd);
+ssize_t				ft_putchar_fd(char c, int fd);
+ssize_t				ft_putstr_fd(char *s, int fd);
+ssize_t				ft_putendl_fd(char *s, int fd);
+ssize_t				ft_putnbr_fd(int n, int fd);
 ssize_t				ft_putstr(char *str);
 ssize_t				ft_putendl(char *str);
-void				ft_putnbr(int nb);
+ssize_t				ft_putnbr(int nb);
 char				*ft_strcat(char *dest, char *src);
 int					ft_abs(int n);
 char				*ft_strncpy(char *dest, const char *src, size_t n);

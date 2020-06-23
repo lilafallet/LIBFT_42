@@ -6,14 +6,14 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/28 15:28:17 by lfallet           #+#    #+#             */
-/*   Updated: 2020/04/28 15:28:20 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/06/23 18:06:41 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_putchar_fd(char c, int fd)
 {
-	write(STDOUT_FILENO, &c, 1);
+	return (write(STDOUT_FILENO, &c, 1));
 }
