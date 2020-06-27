@@ -6,7 +6,7 @@
 #    By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 15:19:15 by lfallet           #+#    #+#              #
-#    Updated: 2020/06/27 11:47:51 by lfallet          ###   ########.fr        #
+#    Updated: 2020/06/27 13:10:24 by lfallet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -189,7 +189,7 @@ vpath %.c sources/initialisation/
 vpath %.c sources/is_something/
 vpath %.c sources/list/
 vpath %.c sources/mem/
-vpath %.c sources/put/
+vpath %.c sources/output/
 vpath %.c sources/gnl/
 vpath %.c sources/printf/
 vpath %.c sources/printf/conversion/
