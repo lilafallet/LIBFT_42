@@ -59,7 +59,7 @@ ft_lstadd_back  |Adds the element ’new’ at the end of the list.
 ft_lstdelone    |Takes as a parameter an element and frees the memory of the element’s content using the function ’del’ given as a parameter and free the element. The memory of ’next’ must not be freed.
 ft_lstclear     |Deletes and frees the given element and every successor of that element, using the function ’del’ and free(3). Finally, the pointer to the list must be set to NULL.
 ft_lstiter      |Iterates the list ’lst’ and applies the function ’f’ to the content of each element.
-ft_lstmap       |Iterates the list ’lst’ and applies the function ’f’ to the content of each element. Creates a new list resulting of the successive applications of the function ’f’. The ’del’ function is used to delete the content of an element if needed.
+ft_lstmapi      |Iterates the list ’lst’ and applies the function ’f’ to the content of each element. Creates a new list resulting of the successive applications of the function ’f’. The ’del’ function is used to delete the content of an element if needed.
 
 # Personal functions
 
@@ -67,10 +67,10 @@ ft_lstmap       |Iterates the list ’lst’ and applies the function ’f’ to
 
 FUNCTION NAME | DESCRIPTION |
 :-----------: | :-----------:
-ft_atoul        |Convert a string to an unsigned long
-ft_int_to_char  |Convert values of type integer to values of type character
-ft_ltoa_base    |Convert a long to a string in the database
-ft_ultoa_base   |Convert an unsigned long to a string in the database
+ft_atoul        |Converts a string to an unsigned long
+ft_int_to_char  |Converts values of type integer to values of type character
+ft_ltoa_base    |Converts a long to a string in the database
+ft_ultoa_base   |Converts an unsigned long to a string in the database
 
 ## Initialisation
 
@@ -82,20 +82,20 @@ ft_calloc |Allocates a memory block by setting all these bytes to 0
 
 FUNCTION NAME | DESCRIPTION |
 :-----------: | :-----------:
-ft_is_len_zero        |Return FALSE if the length of the string is 0, return the length of the string if the length of the string is different of zero
-ft_iscomma            |Return TRUE if the character is a comma
-ft_iswhitespace       |Return TRUE if the character is a space or a tabulation
-ft_iswhitespacecomma  |Return TRUE if the character is a space or a tabulation or a comma
-ft_iswhitespacedigit  |Return TRUE if the character is a space or a tabulation or a number
+ft_is_len_zero        |Returns FALSE if the length of the string is 0, return the length of the string if the length of the string is different of zero
+ft_iscomma            |Returns TRUE if the character is a comma
+ft_iswhitespace       |Returns TRUE if the character is a space or a tabulation
+ft_iswhitespacecomma  |Returns TRUE if the character is a space or a tabulation or a comma
+ft_iswhitespacedigit  |Returns TRUE if the character is a space or a tabulation or a number
 
 ## Maths
 
 FUNCTION NAME | DESCRIPTION |
 :-----------: | :-----------:
-ft_abs                  |Return the absolute value of a number
-ft_bubblesort_minindex  |Return the index of the smallest number present in an array of numbers
-ft_get_size_of_nb       |Return the length of a number
-ft_lfpow                |Return the high value (double) at a given power
+ft_abs                  |Returns the absolute value of a number
+ft_bubblesort_minindex  |Returns the index of the smallest number present in an array of numbers
+ft_get_size_of_nb       |Returns the length of a number
+ft_lfpow                |Returns the high value (double) at a given power
 
 ## Mem
 
@@ -109,3 +109,22 @@ ft_memjoin_free |Similar to strjoin, it creates a string wich contains the assem
 
 FUNCTION NAME | DESCRIPTION |
 :-----------: | :-----------:
+ft_putchar_fd     |Outputs the character ’c’
+ft_putstr_fd      |Outputs the string ’s’
+ft_putendl_fd     |Outputs the string ’s’, followed by a newline
+ft_putnbr_fd      |Outputs the integer ’n’
+
+## String
+
+FUNCTION NAME | DESCRIPTION |
+:-----------: | :-----------:
+ft_free_tab       |Free(3) all the string presents in a character string array
+ft_strcdup        |Duplicates a string to a given character
+ft_strcheck       |Applies a character test function to a string
+ft_strclen        |Returns the size of a string to a given character.
+ft_strdel         |Takes as parameter the address of a string that must be free with free(3) and its pointer set to NULL
+ft_strequ         |Lexicographically compares str1 and str2. If the two strings are equal, the function returns TRUE, or FALSE otherwise
+ft_striter        |Applies the function f to each character in the string passed as a parameter. Each character is passed by address to the function f in order to be modified if necessary
+ft_strlcpy        |Copies the string src in the string dest up to size - 1 and return the total length of the string they tried to create
+ft_strndup        |Returns a pointer to a new string which is a duplicate of the string s. Memory for the new string is obtained with malloc(3), and can be freed with free(3)
+ft_strnequ        |Compares lexicographically str1 and str2 up to n characters maximum or a ’0’ has been encountered. If both strings are equal, the function returns TRUE, or FALSE otherwise
