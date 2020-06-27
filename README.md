@@ -128,3 +128,22 @@ ft_striter        |Applies the function f to each character in the string passed
 ft_strlcpy        |Copies the string src in the string dest up to size - 1 and return the total length of the string they tried to create
 ft_strndup        |Returns a pointer to a new string which is a duplicate of the string s. Memory for the new string is obtained with malloc(3), and can be freed with free(3)
 ft_strnequ        |Compares lexicographically str1 and str2 up to n characters maximum or a ’0’ has been encountered. If both strings are equal, the function returns TRUE, or FALSE otherwise
+
+## Vector
+
+A vector means a container of elements ordered and accessible by indices, the size of which is dynamic: it is updated automatically when elements are added or deleted. The functions that will follow are functions that we can just as well use with strings, but the fact of using vectors will make it easier and more efficient to change thanks to the t_vector structure:
+- the character chain: str
+- vector size: size
+- the size of the character chain: len
+- resize vector: resize
+
+    typedef struct	s_vector
+    {
+	      char      *str;
+          size_t    len;
+	      size_t    size;
+	      size_t    scale;
+    }               t_vector;
+
+FUNCTION NAME | DESCRIPTION |
+:-----------: | :-----------:
