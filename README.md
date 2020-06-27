@@ -2,6 +2,15 @@
 
 First project of 42 which consists in the creation of functions presents in the standard C library and other personal functions/lib (vector).
 
+# Building
+
+``$> git clone https://github.com/lilafallet/LIBFT_42.git ``
+
+``$> cd LIBFT_42``
+
+  
+   ``$> make``
+
 ## Part 1
 * ft_memset
 * ft_bzero
@@ -60,6 +69,14 @@ ft_lstdelone    |Takes as a parameter an element and frees the memory of the ele
 ft_lstclear     |Deletes and frees the given element and every successor of that element, using the function ’del’ and free(3). Finally, the pointer to the list must be set to NULL.
 ft_lstiter      |Iterates the list ’lst’ and applies the function ’f’ to the content of each element.
 ft_lstmapi      |Iterates the list ’lst’ and applies the function ’f’ to the content of each element. Creates a new list resulting of the successive applications of the function ’f’. The ’del’ function is used to delete the content of an element if needed.
+
+# Get_next_line
+
+Returns a line ending with a '\n' read from a file descriptor : [repository of get_next_line](https://github.com/lilafallet/GNL_42)
+
+# Ft_printf
+
+Reproduction of the printf's function : [repository of ft_printf](https://github.com/lilafallet/PRINTF_42)
 
 # Personal functions
 
