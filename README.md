@@ -137,13 +137,54 @@ A vector means a container of elements ordered and accessible by indices, the si
 - the size of the character chain: len
 - resize vector: resize
 
-    typedef struct	s_vector
-    {
-	      char      *str;
-          size_t    len;
-	      size_t    size;
-	      size_t    scale;
-    }               t_vector;
+``````````````````````````````````````````C
+typedef struct	s_vector
+{
+	char		*str;
+	size_t		size;
+	size_t		len;
+	size_t		resize;
+}				t_vector;
+```````````````````````````````````````````
 
 FUNCTION NAME | DESCRIPTION |
 :-----------: | :-----------:
+vct_add			|Adds a character at the end of the vector
+vct_addchararat		|Replaces a character to the given index
+vct_addmem		|Copies len bytes from the memory zone src to the memory zone dest
+vct_addstr		|Adds a string at the end of the vector
+vct_addstrat		|Adds a string to the given index
+vct_apply		|Applies a testing/modification function to a vector
+vct_cat			|Concatenates two vectors
+vct_cdup		|Duplicates a vector up to a given character
+vct_chr			|Returns the index of the first occurence of the desired character or FAILURE if the character has not been found
+vct_chrstr		|Returns TRUE if the desired string 'search' has be found on the vector's string, FALSE is the string 'search' has not be found
+vct_clen		|Returns the length of the vector's string up to a given character
+vct_cpy			|Copies a vector's content in an other one
+vct_cut			|Deletes the last character of a vector
+vct_cutfrom		|Deletes the last nb_of_char of a vector
+vct_del			|Deletes a vector
+vct_dup			|Duplicates a vector
+vct_equ			|Returns SUCCESS if the strings contained in the two vectors are identicals, otherwise FALSE
+vct_getcharat		|Returns the nth character of a vector
+vct_getfirstchar	|Returns the first character of a vector
+vct_getlen		|Returns the length of the vector's string
+vct_getstr		|Returns a pointer to the string contained in a vector
+vct_join		|Joined the vectors's strings in a new vector
+vct_joinfree		|Joined the vectors's strings in a new vector and releases one vector, the other vector or the two vector
+vct_new			|Initializes a new vector of the size passed as parameter. If the size is 0, the size will be reset to the value set by DEFAULT_VECTOR_SIZE
+vct_nlen		|Returns the size of the vector's string on a maximum n bytes
+vct_pop			|Deteles the first character of a vector
+vct_popcut		|Deles the first nth 'start' character and the last nth 'end' character
+vct_popfrom		|Deltetes the first nth characteres of a vector
+vct_print		|Displays a vector on 'len' byte
+vct_printf_fd		|Displays a vector on 'len' byte
+vct_printendl		|Displays a vector one 'len' byte and add a '\n'
+vct_printendl_fd	|Displays a vector one 'len' byte and add a '\n' on a given file descriptor
+vct_push		|Adds a character at the begining of a vector
+vct_pushstr		|Adds a string at the begining of a vector
+vct_readline		|Reads a line on a file descriptor et returns the latter into the vector's string given in the function's parameter
+vct_resize		|Resize the vector in function of the given 'len_to_resize' parameter
+vct_split		|Divides the character string contained in the vector via the characters present in 'str' and returns to each call of 'split' the next part divided in a new vector as long as it is recalled with the same vector or NULL. If the initial vector changes, the division will be done on this new vector. The NO_SEP provides all the word but not the separator in a separate vector, the flag EACH_SEP flag provides each separator in a separate vector, the flag ALL_SEP provides all the separators that follow in the same vector, the flag WORD provides all the word that follow in the same vector.
+vct_splitchr		|Divides the initial vector on the first occurrence of the character c (this one not included). The first part is returned in a new vector while the second is copied into the initial vector by overwriting the data initially present.
+vct_strdup		|Returns a copy of the vector's string
