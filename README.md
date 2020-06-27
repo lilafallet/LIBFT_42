@@ -1,6 +1,6 @@
 # LIBFT
 
-First project of 42 which consists in the creation of functions present in the standard C library.
+First project of 42 which consists in the creation of functions presents in the standard C library and other personal functions/lib (vector).
 
 ## Part 1
 * ft_memset
