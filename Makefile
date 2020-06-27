@@ -6,7 +6,7 @@
 #    By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 15:19:15 by lfallet           #+#    #+#              #
-#    Updated: 2020/06/13 20:30:09 by lfallet          ###   ########.fr        #
+#    Updated: 2020/06/27 11:47:51 by lfallet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -188,20 +188,16 @@ vpath %.c sources/conversion/
 vpath %.c sources/initialisation/
 vpath %.c sources/is_something/
 vpath %.c sources/list/
-vpath %.c sources/malloc/
 vpath %.c sources/mem/
-vpath %.c sources/print/
-vpath %.c sources/tab/
-vpath %.c sources/PROJECT_GET_NEXT_LINE/
-vpath %.c sources/PROJECT_PRINTF/
-vpath %.c sources/PROJECT_PRINTF/conversion/
-vpath %.c sources/PROJECT_PRINTF/utils/
-vpath %.c sources/PROJECT_PRINTF/parser/
+vpath %.c sources/put/
+vpath %.c sources/gnl/
+vpath %.c sources/printf/
+vpath %.c sources/printf/conversion/
+vpath %.c sources/printf/utils/
+vpath %.c sources/printf/parser/
 vpath %.c sources/string/
-vpath %.c sources/to_something/
 vpath %.c sources/vector/
-vpath %.c sources/number/
-vpath %.c sources/sort/
+vpath %.c sources/maths/
 
 OBJS = $(patsubst %.c, $(OBJS_DIR)%.o, $(SRCS))
 OBJS_DIR = ./objs/
