@@ -72,7 +72,7 @@ ft_lstmapi      |Iterates the list ’lst’ and applies the function ’f’ to
 
 # Get_next_line
 
-Returns a line ending with a '\n' read from a file descriptor : [repository of get_next_line](https://github.com/lilafallet/GNL_42)
+Returns a line ending with a '\n' read from a file descriptor without knowing its size beforehand: [repository of get_next_line](https://github.com/lilafallet/GNL_42)
 
 # Ft_printf
 
