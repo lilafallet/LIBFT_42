@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/04 16:51:41 by lfallet           #+#    #+#             */
-/*   Updated: 2020/08/30 17:45:38 by lfallet          ###   ########.fr       */
+/*   Created: 2020/08/30 18:18:30 by lfallet           #+#    #+#             */
+/*   Updated: 2020/08/30 18:23:30 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **str)
+void	ft_lstdel(t_list **lst, void (*del)(void *))
 {
-	if (!str || !*str)
+	t_list	*tmp;
+
+	if (!lst || !*lst)
 		return ;
-	free(*str);
-	*str = NULL;
+	while (*lst)
+	{
+		tmp = (*lst)->next;
+		if (del != NULL)
+			del((*lst)->content);
+		free(*lst);
+		*lst = NULL;
+		*lst = tmp;
+	}
 }
