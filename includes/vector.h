@@ -6,7 +6,7 @@
 /*   By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/27 19:00:06 by lfallet           #+#    #+#             */
-/*   Updated: 2020/06/27 18:02:28 by lfallet          ###   ########.fr       */
+/*   Updated: 2020/09/01 11:47:38 by lfallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,5 +120,6 @@ t_vector		*vct_splitchr(t_vector *vct, char c);
 ssize_t			vct_readline(t_vector *vct, const int fd);
 int				vct_addmem(t_vector *vct, void *mem, size_t len);
 char			vct_getcharat(t_vector *vct, size_t index);
+void			vct_clear(t_vector *vct);
 
 #endif
