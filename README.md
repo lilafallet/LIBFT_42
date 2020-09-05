@@ -195,7 +195,7 @@ vct_pop			|Deteles the first character of a vector
 vct_popcut		|Deles the first nth 'start' character and the last nth 'end' character
 vct_popfrom		|Deltetes the first nth characteres of a vector
 vct_print		|Displays a vector on 'len' byte
-vct_printf_fd		|Displays a vector on 'len' byte
+vct_print_fd		|Displays a vector on 'len' byte on a given file descriptor.
 vct_printendl		|Displays a vector one 'len' byte and add a '\n'
 vct_printendl_fd	|Displays a vector one 'len' byte and add a '\n' on a given file descriptor
 vct_push		|Adds a character at the begining of a vector
