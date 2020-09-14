@@ -192,8 +192,8 @@ vct_joinfree		|Joined the vectors's strings in a new vector and releases one vec
 vct_new			|Initializes a new vector of the size passed as parameter. If the size is 0, the size will be reset to the value set by DEFAULT_VECTOR_SIZE
 vct_nlen		|Returns the size of the vector's string on a maximum n bytes
 vct_pop			|Deteles the first character of a vector
-vct_popcut		|Deles the first nth 'start' character and the last nth 'end' character
-vct_popfrom		|Deltetes the first nth characteres of a vector
+vct_popcut		|Deletes the first nth 'start' character and the last nth 'end' character
+vct_popfrom		|Deletes the first nth characteres of a vector
 vct_print		|Displays a vector on 'len' byte
 vct_print_fd		|Displays a vector on 'len' byte on a given file descriptor.
 vct_printendl		|Displays a vector one 'len' byte and add a '\n'
