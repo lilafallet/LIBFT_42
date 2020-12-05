@@ -6,7 +6,7 @@
 #    By: lfallet <lfallet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 15:19:15 by lfallet           #+#    #+#              #
-#    Updated: 2020/09/01 11:48:13 by lfallet          ###   ########.fr        #
+#    Updated: 2020/12/05 13:12:25 by lfallet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME = libft.a
 
 CFLAGS += -Wall
 CFLAGS += -Wextra
+CFLAGS += -fPIC
 ifeq ($(debug), 0)
 	CFLAGS += -g3
 else ifeq ($(debug), 1)
@@ -137,6 +138,7 @@ SRCS += vct_print_fd.c
 SRCS += vct_printendl.c
 SRCS += vct_printendl_fd.c
 SRCS += vct_pop.c
+SRCS += vct_popcharat.c
 SRCS += vct_cut.c
 SRCS += vct_push.c
 SRCS += vct_popfrom.c
@@ -163,6 +165,9 @@ SRCS += vct_readline.c
 SRCS += vct_addmem.c
 SRCS += vct_getcharat.c
 SRCS += vct_clear.c
+SRCS += vct_chrnstr.c
+SRCS += vct_nbchar.c
+SRCS += vct_getlastchar.c
 
 SRCS += get_next_line.c
 SRCS += get_next_line_multifd.c
@@ -185,6 +190,17 @@ SRCS += utils_x_conversion.c
 SRCS += ft_ltoa_base_post.c
 SRCS += utils_number.c
 
+SRCS += btree_apply_by_level.c
+SRCS += btree_apply_infix.c
+SRCS += btree_apply_prefix.c
+SRCS += btree_apply_suffix.c
+SRCS += btree_create_node.c
+SRCS += btree_free_suffix.c
+SRCS += btree_insert_data.c
+SRCS += btree_level_count.c
+SRCS += btree_nodes_count.c
+SRCS += btree_search_item.c
+
 vpath %.c sources/
 vpath %.c sources/conversion/
 vpath %.c sources/initialisation/
@@ -200,6 +216,7 @@ vpath %.c sources/printf/parser/
 vpath %.c sources/string/
 vpath %.c sources/vector/
 vpath %.c sources/maths/
+vpath %.c sources/binary_tree/
 
 OBJS = $(patsubst %.c, $(OBJS_DIR)%.o, $(SRCS))
 OBJS_DIR = ./objs/
